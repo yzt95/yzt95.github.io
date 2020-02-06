@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>菜的睡不着</title>
+    <link>https://yzt95.github.io/</link>
+    <description>Recent content on 菜的睡不着</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 07 Feb 2020 00:28:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://yzt95.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>这是一篇测试博文</title>
+      <link>https://yzt95.github.io/post/test/</link>
+      <pubDate>Fri, 07 Feb 2020 00:28:26 +0800</pubDate>
+      
+      <guid>https://yzt95.github.io/post/test/</guid>
+      <description>测试 测试 下面是代码 1 2 3 4 5 pubilc class JavaHello{ public static main(string[] args) { System.out.println(&amp;#34;hello,world&amp;#34;); } } $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://yzt95.github.io/about/</link>
+      <pubDate>Thu, 06 Feb 2020 23:29:54 +0800</pubDate>
+      
+      <guid>https://yzt95.github.io/about/</guid>
+      <description>关于我 计算流体力学 LBM 自学Java 关于这个网站</description>
+    </item>
+    
+    <item>
+      <title>全部文章</title>
+      <link>https://yzt95.github.io/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yzt95.github.io/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>搜索</title>
+      <link>https://yzt95.github.io/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yzt95.github.io/search/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
