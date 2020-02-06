@@ -6,10 +6,19 @@
     <description>Recent content on 菜的睡不着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 07 Feb 2020 00:28:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2020 01:32:48 +0800</lastBuildDate>
     
 	<atom:link href="https://yzt95.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>第二篇博文</title>
+      <link>https://yzt95.github.io/post/test2/</link>
+      <pubDate>Fri, 07 Feb 2020 01:32:48 +0800</pubDate>
+      
+      <guid>https://yzt95.github.io/post/test2/</guid>
+      <description>测试 test2</description>
+    </item>
     
     <item>
       <title>这是一篇测试博文</title>
