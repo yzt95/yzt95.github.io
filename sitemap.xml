@@ -3,36 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://yzt95.github.io/post/</loc>
-    <lastmod>2020-02-07T01:32:48+08:00</lastmod>
+    <loc>https://yzt95.github.io/categories/</loc>
+    <lastmod>2020-02-07T02:16:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yzt95.github.io/post/test2/</loc>
-    <lastmod>2020-02-07T01:32:48+08:00</lastmod>
+    <loc>https://yzt95.github.io/tags/GitHub/</loc>
+    <lastmod>2020-02-07T02:16:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yzt95.github.io/tags/Hugo/</loc>
+    <lastmod>2020-02-07T02:16:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yzt95.github.io/post/</loc>
+    <lastmod>2020-02-07T02:16:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yzt95.github.io/tags/</loc>
+    <lastmod>2020-02-07T02:16:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yzt95.github.io/post/2020-02-07-build-a-blog/</loc>
+    <lastmod>2020-02-07T02:16:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yzt95.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2020-02-07T02:16:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yzt95.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2020-02-07T02:16:23+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://yzt95.github.io/</loc>
-    <lastmod>2020-02-07T01:32:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yzt95.github.io/post/test/</loc>
-    <lastmod>2020-02-07T00:28:26+08:00</lastmod>
+    <lastmod>2020-02-07T02:16:23+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://yzt95.github.io/about/</loc>
     <lastmod>2020-02-06T23:29:54+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yzt95.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://yzt95.github.io/tags/</loc>
   </url>
   
   <url>

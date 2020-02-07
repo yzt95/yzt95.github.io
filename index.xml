@@ -6,27 +6,18 @@
     <description>Recent content on 菜的睡不着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 07 Feb 2020 01:32:48 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2020 02:16:23 +0800</lastBuildDate>
     
 	<atom:link href="https://yzt95.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>第二篇博文</title>
-      <link>https://yzt95.github.io/post/test2/</link>
-      <pubDate>Fri, 07 Feb 2020 01:32:48 +0800</pubDate>
+      <title>使用Hugo搭建个人博客</title>
+      <link>https://yzt95.github.io/post/2020-02-07-build-a-blog/</link>
+      <pubDate>Fri, 07 Feb 2020 02:16:23 +0800</pubDate>
       
-      <guid>https://yzt95.github.io/post/test2/</guid>
-      <description>测试 test2</description>
-    </item>
-    
-    <item>
-      <title>这是一篇测试博文</title>
-      <link>https://yzt95.github.io/post/test/</link>
-      <pubDate>Fri, 07 Feb 2020 00:28:26 +0800</pubDate>
-      
-      <guid>https://yzt95.github.io/post/test/</guid>
-      <description>测试 测试 下面是代码 1 2 3 4 5 pubilc class JavaHello{ public static main(string[] args) { System.out.println(&amp;#34;hello,world&amp;#34;); } } $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</description>
+      <guid>https://yzt95.github.io/post/2020-02-07-build-a-blog/</guid>
+      <description>前言 一直想搭建一个博客，用来记录一些东西，比如学习过程，读书笔记，刷题记录，成体系的或者零散的知识。因为我发现之前很多东西用过之后马上就忘记了，下次再用或者想和别人交流的时候还需要再次搜索，效率很低。 后来在B站看到Up主 CodeSheep 的一个 Hugo教程，然后自己又折腾摸索了两三天，终于把博客</description>
     </item>
     
     <item>
@@ -35,7 +26,7 @@
       <pubDate>Thu, 06 Feb 2020 23:29:54 +0800</pubDate>
       
       <guid>https://yzt95.github.io/about/</guid>
-      <description>关于我 计算流体力学 LBM 自学Java 关于这个网站</description>
+      <description>计算流体力学 计算流体力学（Computational Fluid Dynamic，CFD），这是我正在攻读的专业，正在使用 C++ 编写一套基于Lattice Boltzman Method（LBM）的 CFD 求解器，专注于航空器外流的计算，同时使用基于 LBM 的商业软件 &amp;ndash; XFlow，课题组同学也使用 Ansys Fluent，CFL3D，</description>
     </item>
     
     <item>
