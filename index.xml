@@ -26,7 +26,7 @@
       <pubDate>Thu, 06 Feb 2020 23:29:54 +0800</pubDate>
       
       <guid>https://yzt95.github.io/about/</guid>
-      <description>计算流体力学 计算流体力学（Computational Fluid Dynamic，CFD），这是我正在攻读的专业，正在使用 C++ 编写一套基于Lattice Boltzman Method（LBM）的 CFD 求解器，专注于航空器外流的计算，同时使用基于 LBM 的商业软件 &amp;ndash; XFlow，课题组同学也使用 Ansys Fluent，CFL3D，</description>
+      <description>计算流体力学 计算流体力学（Computational Fluid Dynamic，CFD），这是我正在攻读的专业，正在使用 C++ 编写一套基于Lattice Boltzman Method（LBM）的 CFD 求解器，专注于航空器外流计算，同时使用基于 LBM 的商业软件 &amp;ndash; XFlow，课题组同学也使用 Ansys Fluent，CFL3D，C</description>
     </item>
     
     <item>
