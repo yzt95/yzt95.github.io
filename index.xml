@@ -6,10 +6,19 @@
     <description>Recent content on 菜的睡不着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 07 Feb 2020 02:16:23 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 25 Feb 2020 23:05:14 +0800</lastBuildDate>
     
 	<atom:link href="https://yzt95.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 数组</title>
+      <link>https://yzt95.github.io/post/2020-02-25-JavaArray/</link>
+      <pubDate>Tue, 25 Feb 2020 23:05:14 +0800</pubDate>
+      
+      <guid>https://yzt95.github.io/post/2020-02-25-JavaArray/</guid>
+      <description>数组的特点 数组 Array 是多个相同类型的数据按一定顺序排列的集合，并使用一个名字命名，通过索引的方式对数组元素统一管理 数组属于引用数据类型，而数组的元素可以是基本数据类型，也可以是引用数据类型 创建数组对象会在堆内存中开辟一整块连续的空间 数组的长度 length 一旦确定就不可修改 数组和其他引用数据类型</description>
+    </item>
     
     <item>
       <title>使用Hugo搭建个人博客</title>
