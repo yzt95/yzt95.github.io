@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 菜的睡不着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 25 Feb 2020 23:05:14 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2020 12:57:32 +0800</lastBuildDate>
     
 	<atom:link href="https://yzt95.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 面向对象1</title>
+      <link>https://yzt95.github.io/post/2020-02-28-JavaObjectOriented1/</link>
+      <pubDate>Fri, 28 Feb 2020 12:57:32 +0800</pubDate>
+      
+      <guid>https://yzt95.github.io/post/2020-02-28-JavaObjectOriented1/</guid>
+      <description>基本概念 面向对象基于面向过程，对象中包含属性和行为，将过程封装在对象之中，让程序员从过程的执行者转变到对象的指挥者 面向对象易维护、易复用、易扩展。 因为面向对象有封装、继承、多态性的特性，所以可以设计出低耦合的系统，使系统更加灵活、更加易于维护 三条主线 类及类的成员：属性、方法、构造</description>
+    </item>
     
     <item>
       <title>Java基础 | 数组</title>

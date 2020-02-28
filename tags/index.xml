@@ -6,7 +6,7 @@
     <description>Recent content in Tags on 菜的睡不着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 25 Feb 2020 23:05:14 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2020 12:57:32 +0800</lastBuildDate>
     
 	<atom:link href="https://yzt95.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>Java</title>
       <link>https://yzt95.github.io/tags/Java/</link>
-      <pubDate>Tue, 25 Feb 2020 23:05:14 +0800</pubDate>
+      <pubDate>Fri, 28 Feb 2020 12:57:32 +0800</pubDate>
       
       <guid>https://yzt95.github.io/tags/Java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java基础</title>
+      <link>https://yzt95.github.io/tags/Java%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 28 Feb 2020 12:57:32 +0800</pubDate>
+      
+      <guid>https://yzt95.github.io/tags/Java%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     
