@@ -1,67 +1,76 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>菜的睡不着</title>
-    <link>https://yzt95.github.io/</link>
-    <description>Recent content on 菜的睡不着</description>
+    <title>placeholder</title>
+    <link>https://www.yzt2020.life/</link>
+    <description>Recent content on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 28 Feb 2020 12:57:32 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2020 09:49:54 +0800</lastBuildDate>
     
-	<atom:link href="https://yzt95.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.yzt2020.life/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Java基础 | 面向对象2</title>
+      <link>https://www.yzt2020.life/post/2020-03-02-JavaObjectOriented2/</link>
+      <pubDate>Mon, 02 Mar 2020 09:49:54 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-02-JavaObjectOriented2/</guid>
+      <description>继承 语法格式 class A extends B {} A 类即子类、派生类、subclass B 类即父类、基类、超类、superclass 一旦子类继承父类后，子类会获取父类中所有声明的属性和方法，但是父类中 private 属性或方法，因封装性，在子类中不可见 子类继承父类后，可以声明自己特有的属性和方法，以扩展类的功能 一个子类只能</description>
+    </item>
+    
+    <item>
       <title>Java基础 | 面向对象1</title>
-      <link>https://yzt95.github.io/post/2020-02-28-JavaObjectOriented1/</link>
+      <link>https://www.yzt2020.life/post/2020-02-28-JavaObjectOriented1/</link>
       <pubDate>Fri, 28 Feb 2020 12:57:32 +0800</pubDate>
       
-      <guid>https://yzt95.github.io/post/2020-02-28-JavaObjectOriented1/</guid>
+      <guid>https://www.yzt2020.life/post/2020-02-28-JavaObjectOriented1/</guid>
       <description>基本概念 面向对象基于面向过程，对象中包含属性和行为，将过程封装在对象之中，让程序员从过程的执行者转变到对象的指挥者 面向对象易维护、易复用、易扩展。 因为面向对象有封装、继承、多态性的特性，所以可以设计出低耦合的系统，使系统更加灵活、更加易于维护 三条主线 类及类的成员：属性、方法、构造</description>
     </item>
     
     <item>
       <title>Java基础 | 数组</title>
-      <link>https://yzt95.github.io/post/2020-02-25-JavaArray/</link>
+      <link>https://www.yzt2020.life/post/2020-02-25-JavaArray/</link>
       <pubDate>Tue, 25 Feb 2020 23:05:14 +0800</pubDate>
       
-      <guid>https://yzt95.github.io/post/2020-02-25-JavaArray/</guid>
+      <guid>https://www.yzt2020.life/post/2020-02-25-JavaArray/</guid>
       <description>数组的特点 数组 Array 是多个相同类型的数据按一定顺序排列的集合，并使用一个名字命名，通过索引的方式对数组元素统一管理 数组属于引用数据类型，而数组的元素可以是基本数据类型，也可以是引用数据类型 创建数组对象会在堆内存中开辟一整块连续的空间 数组的长度 length 一旦确定就不可修改 数组和其他引用数据类型</description>
     </item>
     
     <item>
       <title>使用Hugo搭建个人博客</title>
-      <link>https://yzt95.github.io/post/2020-02-07-build-a-blog/</link>
+      <link>https://www.yzt2020.life/post/2020-02-07-build-a-blog/</link>
       <pubDate>Fri, 07 Feb 2020 02:16:23 +0800</pubDate>
       
-      <guid>https://yzt95.github.io/post/2020-02-07-build-a-blog/</guid>
+      <guid>https://www.yzt2020.life/post/2020-02-07-build-a-blog/</guid>
       <description>前言 一直想搭建一个博客，用来记录一些东西，比如学习过程，读书笔记，刷题记录，成体系的或者零散的知识。因为我发现之前很多东西用过之后马上就忘记了，下次再用或者想和别人交流的时候还需要再次搜索，效率很低。 后来在B站看到Up主 CodeSheep 的一个 Hugo教程，然后自己又折腾摸索了两三天，终于把博客</description>
     </item>
     
     <item>
       <title>关于</title>
-      <link>https://yzt95.github.io/about/</link>
+      <link>https://www.yzt2020.life/about/</link>
       <pubDate>Thu, 06 Feb 2020 23:29:54 +0800</pubDate>
       
-      <guid>https://yzt95.github.io/about/</guid>
+      <guid>https://www.yzt2020.life/about/</guid>
       <description>计算流体力学 计算流体力学（Computational Fluid Dynamic，CFD），这是我正在攻读的专业，正在使用 C++ 编写一套基于Lattice Boltzman Method（LBM）的 CFD 求解器，专注于航空器外流计算，同时使用基于 LBM 的商业软件 &amp;ndash; XFlow，课题组同学也使用 Ansys Fluent，CFL3D，C</description>
     </item>
     
     <item>
       <title>全部文章</title>
-      <link>https://yzt95.github.io/archives/</link>
+      <link>https://www.yzt2020.life/archives/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yzt95.github.io/archives/</guid>
+      <guid>https://www.yzt2020.life/archives/</guid>
       <description></description>
     </item>
     
     <item>
       <title>搜索</title>
-      <link>https://yzt95.github.io/search/</link>
+      <link>https://www.yzt2020.life/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yzt95.github.io/search/</guid>
+      <guid>https://www.yzt2020.life/search/</guid>
       <description></description>
     </item>
     

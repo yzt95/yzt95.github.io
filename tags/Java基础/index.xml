@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java基础 on 菜的睡不着</title>
-    <link>https://yzt95.github.io/tags/Java%E5%9F%BA%E7%A1%80/</link>
-    <description>Recent content in Java基础 on 菜的睡不着</description>
+    <title>Java基础 on placeholder</title>
+    <link>https://www.yzt2020.life/tags/Java%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in Java基础 on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 28 Feb 2020 12:57:32 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2020 09:49:54 +0800</lastBuildDate>
     
-	<atom:link href="https://yzt95.github.io/tags/Java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.yzt2020.life/tags/Java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Java基础 | 面向对象2</title>
+      <link>https://www.yzt2020.life/post/2020-03-02-JavaObjectOriented2/</link>
+      <pubDate>Mon, 02 Mar 2020 09:49:54 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-02-JavaObjectOriented2/</guid>
+      <description>继承 语法格式 class A extends B {} A 类即子类、派生类、subclass B 类即父类、基类、超类、superclass 一旦子类继承父类后，子类会获取父类中所有声明的属性和方法，但是父类中 private 属性或方法，因封装性，在子类中不可见 子类继承父类后，可以声明自己特有的属性和方法，以扩展类的功能 一个子类只能</description>
+    </item>
+    
+    <item>
       <title>Java基础 | 面向对象1</title>
-      <link>https://yzt95.github.io/post/2020-02-28-JavaObjectOriented1/</link>
+      <link>https://www.yzt2020.life/post/2020-02-28-JavaObjectOriented1/</link>
       <pubDate>Fri, 28 Feb 2020 12:57:32 +0800</pubDate>
       
-      <guid>https://yzt95.github.io/post/2020-02-28-JavaObjectOriented1/</guid>
+      <guid>https://www.yzt2020.life/post/2020-02-28-JavaObjectOriented1/</guid>
       <description>基本概念 面向对象基于面向过程，对象中包含属性和行为，将过程封装在对象之中，让程序员从过程的执行者转变到对象的指挥者 面向对象易维护、易复用、易扩展。 因为面向对象有封装、继承、多态性的特性，所以可以设计出低耦合的系统，使系统更加灵活、更加易于维护 三条主线 类及类的成员：属性、方法、构造</description>
     </item>
     
     <item>
       <title>Java基础 | 数组</title>
-      <link>https://yzt95.github.io/post/2020-02-25-JavaArray/</link>
+      <link>https://www.yzt2020.life/post/2020-02-25-JavaArray/</link>
       <pubDate>Tue, 25 Feb 2020 23:05:14 +0800</pubDate>
       
-      <guid>https://yzt95.github.io/post/2020-02-25-JavaArray/</guid>
+      <guid>https://www.yzt2020.life/post/2020-02-25-JavaArray/</guid>
       <description>数组的特点 数组 Array 是多个相同类型的数据按一定顺序排列的集合，并使用一个名字命名，通过索引的方式对数组元素统一管理 数组属于引用数据类型，而数组的元素可以是基本数据类型，也可以是引用数据类型 创建数组对象会在堆内存中开辟一整块连续的空间 数组的长度 length 一旦确定就不可修改 数组和其他引用数据类型</description>
     </item>
     
