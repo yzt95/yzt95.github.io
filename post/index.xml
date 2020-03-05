@@ -6,10 +6,19 @@
     <description>Recent content in Posts on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 02 Mar 2020 09:49:54 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 14:30:31 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 面向对象3</title>
+      <link>https://www.yzt2020.life/post/2020-03-05-JavaObjectOriented3/</link>
+      <pubDate>Thu, 05 Mar 2020 14:30:31 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-05-JavaObjectOriented3/</guid>
+      <description>static 关键字 static 修饰的结构在内存中只有一份，不管类的实例对象有多少个 static 可以修饰属性、方法、代码块、内部类，不可修饰构造器 static 修饰的属性，即静态变量或类变量，是各个对象实例共享的属性，随着类的加载而加载，可以直接使用类名去调用，类只会加载一次，所以静态变量在内存中只会存在一份，存在方法区的</description>
+    </item>
     
     <item>
       <title>Java基础 | 面向对象2</title>
