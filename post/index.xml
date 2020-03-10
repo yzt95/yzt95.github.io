@@ -6,10 +6,19 @@
     <description>Recent content in Posts on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 07 Mar 2020 11:46:23 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2020 19:37:57 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 字符串</title>
+      <link>https://www.yzt2020.life/post/2020-03-10-String/</link>
+      <pubDate>Tue, 10 Mar 2020 19:37:57 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-10-String/</guid>
+      <description>String String：字符串类，所有字符串字面值都是此类的实例 基本特性 String 是一个 final 类，不可被继承 String 实现了 Serializable 接口：字符串是可序列化的 String 实现了 Compareable 接口：字符串是可以比较大小的 String 的不可变性 String 类内部定义了 final char[] value，用于存储字符串序列，对于任意 String 对象，该字符数组大小不可变 字符串是常量，创建后它</description>
+    </item>
     
     <item>
       <title>Java基础 | 异常</title>

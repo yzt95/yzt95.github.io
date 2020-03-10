@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Java基础 | 字符串 | placeholder</title>
+    <meta property="og:title" content="Java基础 | 字符串 - placeholder">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-03-10T19:37:57&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-03-10T19:37:57&#43;08:00'>
+        
+    <meta name="Keywords" content="学习笔记，总结，日志，博客，Java，C&#43;&#43;，Linux，CFD，LBM">
+    <meta name="description" content="Java基础 | 字符串">
+        
+    <meta name="author" content="yzt">
+    <meta property="og:url" content="https://www.yzt2020.life/post/2020-03-10-String/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4031353640611810",
+        enable_page_level_ads: true
+    });
+    </script>
+    
+
+
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.yzt2020.life">
+                        placeholder
+                    </a>
+                
+                <p class="description">yzt&#39;s blog | 学生一枚 | 努力学习中 | Java | C&#43;&#43; | Linux | 计算流体力学 | Lattice Boltzmann Method</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.yzt2020.life">首页</a>
+                    
+                    <a  href="https://www.yzt2020.life/archives/" title="全部文章">全部文章</a>
+                    
+                    <a  href="https://www.yzt2020.life/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#string">String</a>
+      <ul>
+        <li><a href="#基本特性">基本特性</a></li>
+        <li><a href="#string-的不可变性">String 的不可变性</a></li>
+        <li><a href="#string-的存储位置">String 的存储位置</a></li>
+        <li><a href="#string常用方法">String常用方法</a></li>
+        <li><a href="#string-与其他结构的转换">String 与其他结构的转换</a></li>
+      </ul>
+    </li>
+    <li><a href="#stringbuffer-和-stringbuilder">StringBuffer 和 StringBuilder</a>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#常用方法">常用方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Java基础 | 字符串</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年3月10日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80'>Java基础</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <h2 id="string">String</h2>
+<p>String：字符串类，所有字符串字面值都是此类的实例</p>
+<h3 id="基本特性">基本特性</h3>
+<ul>
+<li>String 是一个 final 类，不可被继承</li>
+<li>String 实现了 Serializable 接口：字符串是可序列化的</li>
+<li>String 实现了 Compareable 接口：字符串是可以比较大小的</li>
+</ul>
+<h3 id="string-的不可变性">String 的不可变性</h3>
+<ol>
+<li>String 类内部定义了 final char[] value，用于存储字符串序列，对于任意 String 对象，该字符数组大小不可变</li>
+<li>字符串是常量，创建后它的值不可被更改。无论是对已有的字符串对象<strong>重新赋值</strong>，还是<strong>拼接操作</strong>，还是调用 <strong>replace()</strong> 方法修改，都是重新划分了内存区域进行重新赋值，并不是使用原有 value[] 数组进行赋值</li>
+</ol>
+<h3 id="string-的存储位置">String 的存储位置</h3>
+<ol>
+<li>通过字面量的方式给一个字符串赋值，此时的字符串存储在字符串<strong>常量池</strong>中（常量池是方法区的一部分，JDK1.8为元空间）</li>
+<li>字符串常量池中<strong>不会存储相同内容</strong>（通过 String 的 equals() 比较）的字符串</li>
+<li>使用 new + 构造器的方式创建字符串，字符串存储在堆中</li>
+<li>关于字符串的拼接
+<ul>
+<li>常量与常量的拼接结果存放在常量池，且常量池中不会存储相同的常量</li>
+<li>只要其中有一个是变量，拼接结果就存在堆中</li>
+<li>如果调用 intern() 方法，返回的字符串存在常量池中</li>
+</ul>
+</li>
+<li>String str = new String(&ldquo;abc&rdquo;); 这条语句创建了两个对象，一个是 new 的存在堆空间中，一个是char[]对应的常量池中的数据 &ldquo;abc&rdquo;</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">StringBufferTest</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">static</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">main</span><span style="color:#000;font-weight:bold">(</span>String<span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> args<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+        String str1 <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;a&#34;</span><span style="color:#000;font-weight:bold">;</span>
+        String str2 <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;b&#34;</span><span style="color:#000;font-weight:bold">;</span>
+        String str3 <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;ab&#34;</span><span style="color:#000;font-weight:bold">;</span>
+        String str4 <span style="color:#000;font-weight:bold">=</span> str1 <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;b&#34;</span><span style="color:#000;font-weight:bold">;</span>
+        String str5 <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;a&#34;</span> <span style="color:#000;font-weight:bold">+</span> str2<span style="color:#000;font-weight:bold">;</span>
+        String str6 <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;a&#34;</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;b&#34;</span><span style="color:#000;font-weight:bold">;</span>
+        String str7 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> String<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;ab&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+        
+        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>str3<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">=</span>str4<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>str3<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">=</span>str5<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>str3<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">=</span>str6<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>str3<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">=</span>str7<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>str3<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">=</span>str7<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">intern</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>上面代码的执行结果</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">false</span>
+<span style="color:#0086b3">false</span>
+<span style="color:#0086b3">true</span>
+<span style="color:#0086b3">false</span>
+<span style="color:#0086b3">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="string常用方法">String常用方法</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">length</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 返回字符串长度，return value.length
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">char</span> <span style="color:#900;font-weight:bold">charAt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> index<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 取指定索引位置的字符，return value[index]
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">isEmpty</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 判断字符串是否是空字符串，return value.length==0
+</span><span style="color:#998;font-style:italic"></span>
+String <span style="color:#900;font-weight:bold">toLowerCase</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 使用默认语言环境，将 String 中的所有字符转换为小写
+</span><span style="color:#998;font-style:italic"></span>
+String <span style="color:#900;font-weight:bold">toUpperCase</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 使用默认语言环境，将 String 中的所有字符转换为大写
+</span><span style="color:#998;font-style:italic"></span>
+String <span style="color:#900;font-weight:bold">trim</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 返回一个字符串副本，此副本去除首尾空白
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">equals</span><span style="color:#000;font-weight:bold">(</span>String anotherString<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 比较字符串的内容是否相同
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">equalsIgnoreCase</span><span style="color:#000;font-weight:bold">(</span>String anotherString<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 忽略大小写比较内容
+</span><span style="color:#998;font-style:italic"></span>
+String <span style="color:#900;font-weight:bold">concat</span><span style="color:#000;font-weight:bold">(</span>String anotherString<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 将指定字符串连接至此字符串结尾，等价于 +
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">compareTo</span><span style="color:#000;font-weight:bold">(</span>String anotherString<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 比较字符串大小，常用于字符串排序
+</span><span style="color:#998;font-style:italic"></span>
+String <span style="color:#900;font-weight:bold">substring</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> beginIndex<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 返回一个新的字符串，它是此字符串从beginIndex开始截取到最后一个字符的子串
+</span><span style="color:#998;font-style:italic"></span>
+String <span style="color:#900;font-weight:bold">substring</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> beginIndex<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> endIndex<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 返回一个新的字符串，它是此字符串从 beginIndex 开始截取到 endIndex 的子串，左闭右开
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">endsWith</span><span style="color:#000;font-weight:bold">(</span>String suffix<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 测试此字符串是否以指定的后缀结束
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">startswith</span><span style="color:#000;font-weight:bold">(</span>String suffix<span style="color:#000;font-weight:bold">)</span><span style="color:#a61717;background-color:#e3d2d2">；</span>
+<span style="color:#998;font-style:italic">// 测试此字符串是否以指定的前缀开始
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">startsWith</span><span style="color:#000;font-weight:bold">(</span>String suffix<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> toffset<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 测试此字符串从指定索引开始的子串是否以指定的前缀开始
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">contains</span><span style="color:#000;font-weight:bold">(</span>CharSequence s<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 当且仅当此字符串包含指定的char值序列是，返回true
+</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// CharSequence 是一个接口，String、StringBuffer、StringBuilder 是三个常用实现类
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">indexOf</span><span style="color:#000;font-weight:bold">(</span>String str<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 返回指定字符串在此字符串中第一次出现处的索引，如果不存在指定字符串，返回-1
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">indexOf</span><span style="color:#000;font-weight:bold">(</span>String str<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> fromIndex<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">//  从 fromIndex 开始查找，返回指定字符串在此字符串中第一次出现处的索引，如果不存在指定字符串，返回-1
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">lastIndexOf</span><span style="color:#000;font-weight:bold">(</span>String str<span style="color:#000;font-weight:bold">)</span><span style="color:#a61717;background-color:#e3d2d2">；</span>
+<span style="color:#998;font-style:italic">// 从后往前查找，返回指定字符串在此字符串中最右边（最后一次）出现处的索引
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">lastIndexOf</span><span style="color:#000;font-weight:bold">(</span>String str<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> fromIndex<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 从指定的索引开始反向搜索,返回指定字符串在此字符串中最后一次出现处的索引
+</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// 该字符串中存在唯一的目标子串 str 或者不存在目标子串 str时，indexOf(str) 与 lastIndexOf(str) 返回值相同
+</span><span style="color:#998;font-style:italic"></span>
+String <span style="color:#900;font-weight:bold">replace</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">char</span> oldChar<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">char</span> newChar<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 返回一个新的字符串，使用 newChar 替换掉所有 oldChar
+</span><span style="color:#998;font-style:italic"></span>
+String <span style="color:#900;font-weight:bold">relpace</span><span style="color:#000;font-weight:bold">(</span>CharSequence target<span style="color:#000;font-weight:bold">,</span>CharSequence replacement<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 使用指定的字面值替换 replacement 替换所有 字面值 target
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#998;font-style:italic">// 正则表达式相关的方法
+</span><span style="color:#998;font-style:italic"></span>String <span style="color:#900;font-weight:bold">replaceAll</span><span style="color:#000;font-weight:bold">(</span>String regex<span style="color:#000;font-weight:bold">,</span>String replacement<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 使用给定的 replacement 替换此字符串所有匹配给定的正则表达式 regex 的子字符串
+</span><span style="color:#998;font-style:italic"></span>
+String <span style="color:#900;font-weight:bold">replaceFirst</span><span style="color:#000;font-weight:bold">(</span>String regex<span style="color:#000;font-weight:bold">,</span>String replacement<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 使用给定的 replacement 替换此字符串匹配给定的正则表达式 regex 的第一个子串
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">matches</span><span style="color:#000;font-weight:bold">(</span>String regex<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 此字符串是否匹配给定的正则表达式
+</span><span style="color:#998;font-style:italic"></span>
+String<span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#900;font-weight:bold">split</span><span style="color:#000;font-weight:bold">(</span>String regex<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 切片拆分,根据给定正则表达式的匹配拆分此字符串
+</span><span style="color:#998;font-style:italic"></span>
+String<span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#900;font-weight:bold">split</span><span style="color:#000;font-weight:bold">(</span>String regex<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> limit<span style="color:#000;font-weight:bold">)</span>
+<span style="color:#998;font-style:italic">// 切片拆分,根据给定正则表达式的匹配拆分此字符串,regex 正则表达式分隔符,limit 分割的份数
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="string-与其他结构的转换">String 与其他结构的转换</h3>
+<ul>
+<li><strong>String &mdash;&gt; char[]</strong>
+调用 String 的方法： char[] toCharArray();</li>
+<li><strong>char[] &mdash;&gt; String</strong>
+调用 String 的构造器：String str = new String(char[] value);</li>
+<li><strong>编码 String &mdash;&gt; byte[]</strong>
+<ul>
+<li>调用 String 的方法： getBytes(); 使用默认的字符集进行转换</li>
+<li>调用 String 的方法： getBytes(String charsetName):使用指定的字符集 charsetName 进行转换，比如 &ldquo;gbk&rdquo;</li>
+</ul>
+</li>
+<li><strong>解码 byte[] &mdash;&gt; String</strong>
+<ul>
+<li>调用 String 的构造器：String str = new String(byte[] bytes);  使用默认的字符集进行转换</li>
+<li>调用 String 的构造器：String str = new String(byte[] bytes,String charsetname);  使用指定的字符集 charsetName 进行转换</li>
+</ul>
+</li>
+<li><strong>注意</strong>
+<ul>
+<li>编码过程和解码过程使用的字符集必须一致，否则出现乱码</li>
+<li>utf-8 中一个汉字3个字节，gbk 中一个汉字2个字节</li>
+</ul>
+</li>
+</ul>
+<h2 id="stringbuffer-和-stringbuilder">StringBuffer 和 StringBuilder</h2>
+<ul>
+<li>二者都是可变的字符串序列，也就是说，StringBuffer 和 StringBuilder 类的对象能够被多次的<strong>修改</strong>，并且<strong>不产生新的未使用对象</strong>。</li>
+<li>二者的不同点在于
+<ul>
+<li>StringBuffer <strong>是线程安全</strong>，Stringbuilder <strong>不是线程安全的</strong></li>
+<li>StringBuilder 相较于 StringBuffer 有速度优势，效率更高</li>
+</ul>
+</li>
+</ul>
+<h3 id="说明">说明</h3>
+<ol>
+<li>要区分 StringBuffer 的 length() 和 capacity ，length()获取的是 StringBuffer 底层数组当前存的字符的数量，capacity 是底层数组当前的最大容量，</li>
+<li>扩容问题：底层数组初始容量为 16，当要添加数据时，如果当前底层的数组容量不够，则将容量扩容为之前的 2倍+2（一般情况下），然后再将原来的数组复制到新数组，再执行添加</li>
+<li>尽量使用指定容量的构造器 StringBuffer(int capacity)，减少扩容次数</li>
+</ol>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String str1 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> String<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;abc&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">//char[] value = new char[]{&#39;a&#39;,&#39;b&#39;,&#39;c&#39;};
+</span><span style="color:#998;font-style:italic"></span>StringBuffer sb1 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> StringBuffer<span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">//char[] value = new char[16];
+</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">//System.out.println()
+</span><span style="color:#998;font-style:italic"></span>sb1<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">append</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;a&#39;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">//value[0]=&#39;a&#39;;
+</span><span style="color:#998;font-style:italic"></span>sb1<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">append</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;b&#39;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">//value[1]=&#39;b&#39;;
+</span><span style="color:#998;font-style:italic"></span>
+StringBuffer sb2 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> StringBuffer<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;abc&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">//char[] value = new char[&#34;abc&#34;.length()+16];
+</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">//append(str); 
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="常用方法">常用方法</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">StringBuffer <span style="color:#900;font-weight:bold">append</span><span style="color:#000;font-weight:bold">(</span>String s<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 将指定的字符串 s 追加到此字符序列
+</span><span style="color:#998;font-style:italic"></span>
+StringBuffer <span style="color:#900;font-weight:bold">delete</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> start<span style="color:#000;font-weight:bold">,</span> <span style="color:#458;font-weight:bold">int</span> end<span style="color:#000;font-weight:bold">)</span>
+<span style="color:#998;font-style:italic">// 删除指定位置的字符,位置为左闭右开 [start,end)
+</span><span style="color:#998;font-style:italic"></span>
+StringBuffer <span style="color:#900;font-weight:bold">replace</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> start<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> end<span style="color:#000;font-weight:bold">,</span>String str<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 使用给定字符串 str 替换此序列的子字符串中的字符，位置为左闭右开 [start,end)
+</span><span style="color:#998;font-style:italic"></span>
+StringBuffer <span style="color:#900;font-weight:bold">reverse</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 将此字符序列用其反转形式取代
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">length</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 返回字符串长度
+</span><span style="color:#998;font-style:italic"></span>
+StringBuffer <span style="color:#900;font-weight:bold">insert</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> offset<span style="color:#000;font-weight:bold">,</span> String str<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 在指定位置插入字符串 str，或其他内容
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">char</span> <span style="color:#900;font-weight:bold">charAt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> index<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 取指定索引位置的字符，可用于底层字符的遍历
+</span><span style="color:#998;font-style:italic"></span>
+String <span style="color:#900;font-weight:bold">substring</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> beginIndex<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> endIndex<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">// 返回一个新的字符串，它是此字符串从beginIndex开始截取到endIndex的子串，左闭右开
+</span></code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.yzt2020.life">yzt</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.yzt2020.life/post/2020-03-10-String/">https://www.yzt2020.life/post/2020-03-10-String/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/2020-03-07-JavaException/">Java基础 | 异常</a></li>
+        
+        <li><a href="/post/2020-03-05-JavaObjectOriented3/">Java基础 | 面向对象3</a></li>
+        
+        <li><a href="/post/2020-03-02-JavaObjectOriented2/">Java基础 | 面向对象2</a></li>
+        
+        <li><a href="/post/2020-02-28-JavaObjectOriented1/">Java基础 | 面向对象1</a></li>
+        
+        <li><a href="/post/2020-02-25-JavaArray/">Java基础 | 数组</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='https://www.yzt2020.life/tags/Java%E5%9F%BA%E7%A1%80'>Java基础</a></li>
+                
+                <li><a href='https://www.yzt2020.life/tags/Java'>Java</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "yzt95/commentForMyBlog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.yzt2020.life/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.yzt2020.life">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-10-String/" title="Java基础 | 字符串">Java基础 | 字符串</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-07-JavaException/" title="Java基础 | 异常">Java基础 | 异常</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-05-JavaObjectOriented3/" title="Java基础 | 面向对象3">Java基础 | 面向对象3</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-02-JavaObjectOriented2/" title="Java基础 | 面向对象2">Java基础 | 面向对象2</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-02-28-JavaObjectOriented1/" title="Java基础 | 面向对象1">Java基础 | 面向对象1</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-02-25-JavaArray/" title="Java基础 | 数组">Java基础 | 数组</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-02-07-build-a-blog/" title="使用Hugo搭建个人博客">使用Hugo搭建个人博客</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80/">Java基础 (6)</a></li>
+    
+    <li><a href="https://www.yzt2020.life/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://www.yzt2020.life/tags/GitHub/">GitHub</a>
+    
+    <a href="https://www.yzt2020.life/tags/Hugo/">Hugo</a>
+    
+    <a href="https://www.yzt2020.life/tags/Java/">Java</a>
+    
+    <a href="https://www.yzt2020.life/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+    
+    <a href="https://www.yzt2020.life/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://github.com/yzt95" title="我的 GitHub">我的 GitHub</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.yzt2020.life/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://www.yzt2020.life">placeholder By yzt</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+</body>
+
+</html>
