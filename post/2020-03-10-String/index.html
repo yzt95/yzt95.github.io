@@ -226,7 +226,7 @@
 <h3 id="string-的不可变性">String 的不可变性</h3>
 <ol>
 <li>String 类内部定义了 final char[] value，用于存储字符串序列，对于任意 String 对象，该字符数组大小不可变</li>
-<li>字符串是常量，创建后它的值不可被更改。无论是对已有的字符串对象<strong>重新赋值</strong>，还是<strong>拼接操作</strong>，还是调用 <strong>replace()</strong> 方法修改，都是重新划分了内存区域进行重新赋值，并不是使用原有 value[] 数组进行赋值</li>
+<li>字符串是常量，创建后它的值不可被更改。无论是对已有的字符串对象<strong>重新赋值</strong>，还是<strong>拼接操作</strong>，还是调用 <strong>replace()</strong> 方法修改，都是<strong>重新划分了内存区域</strong>进行重新赋值，并不是使用原有 value[] 数组进行赋值</li>
 </ol>
 <h3 id="string-的存储位置">String 的存储位置</h3>
 <ol>
@@ -240,7 +240,7 @@
 <li>如果调用 intern() 方法，返回的字符串存在常量池中</li>
 </ul>
 </li>
-<li>String str = new String(&ldquo;abc&rdquo;); 这条语句创建了两个对象，一个是 new 的存在堆空间中，一个是char[]对应的常量池中的数据 &ldquo;abc&rdquo;</li>
+<li>String str = new String(&ldquo;abc&rdquo;); 这条语句创建了两个对象，一个是 new 的存在堆空间中，一个是 char[] 对应的常量池中的数据 &ldquo;abc&rdquo;</li>
 </ol>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -426,14 +426,14 @@ String <span style="color:#900;font-weight:bold">substring</span><span style="co
 <span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">endsWith</span><span style="color:#000;font-weight:bold">(</span>String suffix<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#998;font-style:italic">// 测试此字符串是否以指定的后缀结束
 </span><span style="color:#998;font-style:italic"></span>
-<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">startswith</span><span style="color:#000;font-weight:bold">(</span>String suffix<span style="color:#000;font-weight:bold">)</span><span style="color:#a61717;background-color:#e3d2d2">；</span>
+<span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">startsWith</span><span style="color:#000;font-weight:bold">(</span>String suffix<span style="color:#000;font-weight:bold">)</span><span style="color:#a61717;background-color:#e3d2d2">；</span>
 <span style="color:#998;font-style:italic">// 测试此字符串是否以指定的前缀开始
 </span><span style="color:#998;font-style:italic"></span>
 <span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">startsWith</span><span style="color:#000;font-weight:bold">(</span>String suffix<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> toffset<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#998;font-style:italic">// 测试此字符串从指定索引开始的子串是否以指定的前缀开始
 </span><span style="color:#998;font-style:italic"></span>
 <span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">contains</span><span style="color:#000;font-weight:bold">(</span>CharSequence s<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#998;font-style:italic">// 当且仅当此字符串包含指定的char值序列是，返回true
+<span style="color:#998;font-style:italic">// 当且仅当此字符串包含指定的char值序列，返回true
 </span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// CharSequence 是一个接口，String、StringBuffer、StringBuilder 是三个常用实现类
 </span><span style="color:#998;font-style:italic"></span>
 <span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">indexOf</span><span style="color:#000;font-weight:bold">(</span>String str<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
@@ -447,16 +447,16 @@ String <span style="color:#900;font-weight:bold">substring</span><span style="co
 </span><span style="color:#998;font-style:italic"></span>
 <span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">lastIndexOf</span><span style="color:#000;font-weight:bold">(</span>String str<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> fromIndex<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#998;font-style:italic">// 从指定的索引开始反向搜索,返回指定字符串在此字符串中最后一次出现处的索引
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// 该字符串中存在唯一的目标子串 str 或者不存在目标子串 str时，indexOf(str) 与 lastIndexOf(str) 返回值相同
+</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// 该字符串中存在唯一的目标子串 str 或者不存在目标子串 str 时，indexOf(str) 与 lastIndexOf(str) 返回值相同
 </span><span style="color:#998;font-style:italic"></span>
 String <span style="color:#900;font-weight:bold">replace</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">char</span> oldChar<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">char</span> newChar<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#998;font-style:italic">// 返回一个新的字符串，使用 newChar 替换掉所有 oldChar
 </span><span style="color:#998;font-style:italic"></span>
 String <span style="color:#900;font-weight:bold">relpace</span><span style="color:#000;font-weight:bold">(</span>CharSequence target<span style="color:#000;font-weight:bold">,</span>CharSequence replacement<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#998;font-style:italic">// 使用指定的字面值替换 replacement 替换所有 字面值 target
+<span style="color:#998;font-style:italic">// 使用指定的字面值替换 replacement 替换所有字面值 target
 </span><span style="color:#998;font-style:italic"></span>
-<span style="color:#998;font-style:italic">// 正则表达式相关的方法
-</span><span style="color:#998;font-style:italic"></span>String <span style="color:#900;font-weight:bold">replaceAll</span><span style="color:#000;font-weight:bold">(</span>String regex<span style="color:#000;font-weight:bold">,</span>String replacement<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#998;font-style:italic">/* 正则表达式相关的方法 */</span>
+String <span style="color:#900;font-weight:bold">replaceAll</span><span style="color:#000;font-weight:bold">(</span>String regex<span style="color:#000;font-weight:bold">,</span>String replacement<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#998;font-style:italic">// 使用给定的 replacement 替换此字符串所有匹配给定的正则表达式 regex 的子字符串
 </span><span style="color:#998;font-style:italic"></span>
 String <span style="color:#900;font-weight:bold">replaceFirst</span><span style="color:#000;font-weight:bold">(</span>String regex<span style="color:#000;font-weight:bold">,</span>String replacement<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
@@ -481,7 +481,7 @@ String<span style="color:#000;font-weight:bold">[</span><span style="color:#000;
 <li><strong>编码 String &mdash;&gt; byte[]</strong>
 <ul>
 <li>调用 String 的方法： getBytes(); 使用默认的字符集进行转换</li>
-<li>调用 String 的方法： getBytes(String charsetName):使用指定的字符集 charsetName 进行转换，比如 &ldquo;gbk&rdquo;</li>
+<li>调用 String 的方法： getBytes(String charsetName)：使用指定的字符集 charsetName 进行转换，比如 &ldquo;gbk&rdquo;</li>
 </ul>
 </li>
 <li><strong>解码 byte[] &mdash;&gt; String</strong>
@@ -502,14 +502,14 @@ String<span style="color:#000;font-weight:bold">[</span><span style="color:#000;
 <li>二者都是可变的字符串序列，也就是说，StringBuffer 和 StringBuilder 类的对象能够被多次的<strong>修改</strong>，并且<strong>不产生新的未使用对象</strong>。</li>
 <li>二者的不同点在于
 <ul>
-<li>StringBuffer <strong>是线程安全</strong>，Stringbuilder <strong>不是线程安全的</strong></li>
+<li>StringBuffer <strong>是线程安全</strong>，StringBuilder <strong>不是线程安全的</strong></li>
 <li>StringBuilder 相较于 StringBuffer 有速度优势，效率更高</li>
 </ul>
 </li>
 </ul>
 <h3 id="说明">说明</h3>
 <ol>
-<li>要区分 StringBuffer 的 length() 和 capacity ，length()获取的是 StringBuffer 底层数组当前存的字符的数量，capacity 是底层数组当前的最大容量，</li>
+<li>要区分 StringBuffer 的 length() 和 capacity ，length() 获取的是 StringBuffer 底层数组当前存的字符的数量，capacity 是底层数组当前的最大容量，</li>
 <li>扩容问题：底层数组初始容量为 16，当要添加数据时，如果当前底层的数组容量不够，则将容量扩容为之前的 2倍+2（一般情况下），然后再将原来的数组复制到新数组，再执行添加</li>
 <li>尽量使用指定容量的构造器 StringBuffer(int capacity)，减少扩容次数</li>
 </ol>
