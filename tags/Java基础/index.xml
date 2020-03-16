@@ -6,10 +6,19 @@
     <description>Recent content in Java基础 on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 15 Mar 2020 17:14:09 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 14:31:03 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/tags/Java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 枚举类</title>
+      <link>https://www.yzt2020.life/post/2020-03-16-JavaEnum/</link>
+      <pubDate>Mon, 16 Mar 2020 14:31:03 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-16-JavaEnum/</guid>
+      <description>枚举类 如果一个类的对象只有有限个且是确定的，称此类为枚举类，所以，如果需要定义一组常量时，建议使用枚</description>
+    </item>
     
     <item>
       <title>Java基础 | 常用类</title>
@@ -17,16 +26,16 @@
       <pubDate>Sun, 15 Mar 2020 17:14:09 +0800</pubDate>
       
       <guid>https://www.yzt2020.life/post/2020-03-15-JavaUsefulClasses/</guid>
-      <description>日期时间相关 时间戳 从 1970.01.01 00:00:00 至今的毫秒数，通常用来做差计算程序执行耗时 System 类中的 public static long currentTimeMillis() 方法可以返回时间戳 Date 类 Date类有两个，一个是 java.util.Date，一个是其子类，java.sql.Date（对应数据库中的日期变量） 构造器 1 2 3 4 Date() // 创建一个对应当前时间的 Date 对象 Date(long time) // 创建</description>
+      <description>日期时间相关 时间戳 从 1970.01.01 00:00:00 至今的毫秒数，通常用来做差计算程序执行耗时 System 类中的 public static long currentTimeMillis() 方法可以返回时间戳</description>
     </item>
     
     <item>
       <title>Java基础 | 字符串</title>
-      <link>https://www.yzt2020.life/post/2020-03-10-String/</link>
+      <link>https://www.yzt2020.life/post/2020-03-10-JavaString/</link>
       <pubDate>Tue, 10 Mar 2020 19:37:57 +0800</pubDate>
       
-      <guid>https://www.yzt2020.life/post/2020-03-10-String/</guid>
-      <description>String String：字符串类，所有字符串字面值都是此类的实例 基本特性 String 是一个 final 类，不可被继承 String 实现了 Serializable 接口：字符串是可序列化的 String 实现了 Compareable 接口：字符串是可以比较大小的 String 的不可变性 String 类内部定义了 final char[] value，用于存储字符串序列，对于任意 String 对象，该字符数组大小不可变 字符串是常量，创建后它</description>
+      <guid>https://www.yzt2020.life/post/2020-03-10-JavaString/</guid>
+      <description>String String：字符串类，所有字符串字面值都是此类的实例 基本特性 String 是一个 final 类，不可被继承 String 实现了 Serializable 接</description>
     </item>
     
     <item>
@@ -35,7 +44,7 @@
       <pubDate>Sat, 07 Mar 2020 11:46:23 +0800</pubDate>
       
       <guid>https://www.yzt2020.life/post/2020-03-07-JavaException/</guid>
-      <description>概述 异常事件分为两类：Error 和 Exception Error Java 虚拟机无法解决的严重问题：JVM 系统内部错误、资源耗尽，比如：StackOverflowError、OutOfMemoryError(OOM)，对于 Error 不编写代码进行处理 Exception 因编程错误或偶然因素导致的一般性问题，可以编写代码进行处理，Excep</description>
+      <description>概述 异常事件分为两类：Error 和 Exception Error Java 虚拟机无法解决的严重问题：JVM 系统内部错误、资源耗尽，比如</description>
     </item>
     
     <item>
@@ -44,7 +53,7 @@
       <pubDate>Thu, 05 Mar 2020 14:30:31 +0800</pubDate>
       
       <guid>https://www.yzt2020.life/post/2020-03-05-JavaObjectOriented3/</guid>
-      <description>static 关键字 static 修饰的结构在内存中只有一份，不管类的实例对象有多少个 static 可以修饰属性、方法、代码块、内部类，不可修饰构造器 static 修饰的属性，即静态变量或类变量，是各个对象实例共享的属性，随着类的加载而加载，可以直接使用类名去调用，类只会加载一次，所以静态变量在内存中只会存在一份，存在方法区的</description>
+      <description>static 关键字 static 修饰的结构在内存中只有一份，不管类的实例对象有多少个 static 可以修饰属性、方法、代码块、内部类，</description>
     </item>
     
     <item>
@@ -53,7 +62,7 @@
       <pubDate>Mon, 02 Mar 2020 09:49:54 +0800</pubDate>
       
       <guid>https://www.yzt2020.life/post/2020-03-02-JavaObjectOriented2/</guid>
-      <description>继承 语法格式 class A extends B {} A 类即子类、派生类、subclass B 类即父类、基类、超类、superclass 一旦子类继承父类后，子类会获取父类中所有声明的属性和方法，但是父类中 private 属性或方法，因封装性，在子类中不可见 子类继承父类后，可以声明自己特有的属性和方法，以扩展类的功能 一个子类只能</description>
+      <description>继承 语法格式 class A extends B {} A 类即子类、派生类、subclass B 类即父类、基类、超类、superclas</description>
     </item>
     
     <item>
@@ -62,7 +71,7 @@
       <pubDate>Fri, 28 Feb 2020 12:57:32 +0800</pubDate>
       
       <guid>https://www.yzt2020.life/post/2020-02-28-JavaObjectOriented1/</guid>
-      <description>基本概念 面向对象基于面向过程，对象中包含属性和行为，将过程封装在对象之中，让程序员从过程的执行者转变到对象的指挥者 面向对象易维护、易复用、易扩展。 因为面向对象有封装、继承、多态性的特性，所以可以设计出低耦合的系统，使系统更加灵活、更加易于维护 三条主线 类及类的成员：属性、方法、构造</description>
+      <description>基本概念 面向对象基于面向过程，对象中包含属性和行为，将过程封装在对象之中，让程序员从过程的执行者转变</description>
     </item>
     
     <item>
@@ -71,7 +80,7 @@
       <pubDate>Tue, 25 Feb 2020 23:05:14 +0800</pubDate>
       
       <guid>https://www.yzt2020.life/post/2020-02-25-JavaArray/</guid>
-      <description>数组的特点 数组 Array 是多个相同类型的数据按一定顺序排列的集合，并使用一个名字命名，通过索引的方式对数组元素统一管理 数组属于引用数据类型，而数组的元素可以是基本数据类型，也可以是引用数据类型 创建数组对象会在堆内存中开辟一整块连续的空间 数组的长度 length 一旦确定就不可修改 数组和其他引用数据类型</description>
+      <description>数组的特点 数组 Array 是多个相同类型的数据按一定顺序排列的集合，并使用一个名字命名，通过索引的方式对数组元</description>
     </item>
     
   </channel>

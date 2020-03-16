@@ -56,7 +56,7 @@
                         placeholder
                     </a>
                 
-                <p class="description">yzt&#39;s blog | 学生一枚 | 努力学习中 | Java | C&#43;&#43; | Linux | 计算流体力学 | Lattice Boltzmann Method</p>
+                <p class="description">yzt&#39;s blog | 学习，才能变强</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -218,9 +218,9 @@
 <ol>
 <li>声明与初始化</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -239,51 +239,51 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// new 的作用就是在堆内存中开辟一块连续的空间，用于存储对象实体
-</span><span style="color:#998;font-style:italic"></span>
-<span style="color:#998;font-style:italic">// 方法1,静态初始化：数组初始化和元素赋值同时进行
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> arr1 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">{</span>1<span style="color:#000;font-weight:bold">,</span>2<span style="color:#000;font-weight:bold">,</span>3<span style="color:#000;font-weight:bold">,</span>4<span style="color:#000;font-weight:bold">,</span>5<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">;</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// new 的作用就是在堆内存中开辟一块连续的空间，用于存储对象实体
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4">// 方法1,静态初始化：数组初始化和元素赋值同时进行
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">{</span>1<span style="color:#ff79c6">,</span>2<span style="color:#ff79c6">,</span>3<span style="color:#ff79c6">,</span>4<span style="color:#ff79c6">,</span>5<span style="color:#ff79c6">}</span><span style="color:#ff79c6">;</span>
 
-<span style="color:#998;font-style:italic">// 方法2,动态初始化：数组初始化和元素赋值分开进行
-</span><span style="color:#998;font-style:italic"></span>String<span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> arr2 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> String<span style="color:#000;font-weight:bold">[</span>5<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span> 
+<span style="color:#6272a4">// 方法2,动态初始化：数组初始化和元素赋值分开进行
+</span><span style="color:#6272a4"></span>String<span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> String<span style="color:#ff79c6">[</span>5<span style="color:#ff79c6">]</span><span style="color:#ff79c6">;</span> 
 
-<span style="color:#998;font-style:italic">// 其他正确的方式
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> arr3 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>1<span style="color:#000;font-weight:bold">,</span>2<span style="color:#000;font-weight:bold">,</span>3<span style="color:#000;font-weight:bold">,</span>4<span style="color:#000;font-weight:bold">,</span>5<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 省略new int[]
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> arr4<span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 声明一个int数组，arr是一个尚未初始化的局部变量
-</span><span style="color:#998;font-style:italic"></span>arr4 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span>5<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 初始化数组 arr4
-</span><span style="color:#998;font-style:italic"></span>
-<span style="color:#998;font-style:italic">// 错误的方式
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// int[] arr1 = new int[]; // 动态初始化不可不指明长度
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// int[5] arr2 = new int[5]; // 左边 int[] 指明arr2是int数组，不可在[]内指明长度
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// int[] arr3 = new int[3]{1,2,3}; // 静态初始化不可指定长度
+<span style="color:#6272a4">// 其他正确的方式
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr3 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">{</span>1<span style="color:#ff79c6">,</span>2<span style="color:#ff79c6">,</span>3<span style="color:#ff79c6">,</span>4<span style="color:#ff79c6">,</span>5<span style="color:#ff79c6">}</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 省略new int[]
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr4<span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 声明一个int数组，arr是一个尚未初始化的局部变量
+</span><span style="color:#6272a4"></span>arr4 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>5<span style="color:#ff79c6">]</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 初始化数组 arr4
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4">// 错误的方式
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// int[] arr1 = new int[]; // 动态初始化不可不指明长度
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// int[5] arr2 = new int[5]; // 左边 int[] 指明arr2是int数组，不可在[]内指明长度
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// int[] arr3 = new int[3]{1,2,3}; // 静态初始化不可指定长度
 </span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>长度
 数组长度 length 表示数组的大小，即最多能够容纳多少个元素，数组一旦初始化，其长度就不能改变。</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>arr2<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">length</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 5
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>arr2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 5
 </span></code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>索引
 数组元素的索引从 0 开始，到 length-1 结束</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">for</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> i<span style="color:#000;font-weight:bold">=</span>0<span style="color:#000;font-weight:bold">;</span>i<span style="color:#000;font-weight:bold">&lt;</span>arr<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">length</span><span style="color:#000;font-weight:bold">;</span>i<span style="color:#000;font-weight:bold">+</span><span style="color:#000;font-weight:bold">+</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>arr<span style="color:#000;font-weight:bold">[</span>i<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">&lt;</span>arr<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">+</span><span style="color:#ff79c6">+</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>arr<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><ol start="4">
@@ -324,9 +324,9 @@
 <ol>
 <li>声明与初始化</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -345,61 +345,61 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 静态初始化
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> arr1 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">{</span><span style="color:#000;font-weight:bold">{</span>1<span style="color:#000;font-weight:bold">,</span>2<span style="color:#000;font-weight:bold">,</span>3<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000;font-weight:bold">{</span>4<span style="color:#000;font-weight:bold">,</span>5<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000;font-weight:bold">{</span>6<span style="color:#000;font-weight:bold">,</span>7<span style="color:#000;font-weight:bold">,</span>8<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">;</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 静态初始化
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">{</span><span style="color:#ff79c6">{</span>1<span style="color:#ff79c6">,</span>2<span style="color:#ff79c6">,</span>3<span style="color:#ff79c6">}</span><span style="color:#ff79c6">,</span><span style="color:#ff79c6">{</span>4<span style="color:#ff79c6">,</span>5<span style="color:#ff79c6">}</span><span style="color:#ff79c6">,</span><span style="color:#ff79c6">{</span>6<span style="color:#ff79c6">,</span>7<span style="color:#ff79c6">,</span>8<span style="color:#ff79c6">}</span><span style="color:#ff79c6">}</span><span style="color:#ff79c6">;</span>
 
-<span style="color:#998;font-style:italic">// 动态初始化1：同时指定第一维和第二维的长度
-</span><span style="color:#998;font-style:italic"></span>String<span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> arr2 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> String<span style="color:#000;font-weight:bold">[</span>3<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span>2<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#6272a4">// 动态初始化1：同时指定第一维和第二维的长度
+</span><span style="color:#6272a4"></span>String<span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> String<span style="color:#ff79c6">[</span>3<span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span>2<span style="color:#ff79c6">]</span><span style="color:#ff79c6">;</span>
 
-<span style="color:#998;font-style:italic">// 动态初始化2：只指定第一维的长度
-</span><span style="color:#998;font-style:italic"></span>String<span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> arr3 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> String<span style="color:#000;font-weight:bold">[</span>3<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#6272a4">// 动态初始化2：只指定第一维的长度
+</span><span style="color:#6272a4"></span>String<span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr3 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> String<span style="color:#ff79c6">[</span>3<span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">;</span>
 
-<span style="color:#998;font-style:italic">// 其他正确的方式
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> arr4<span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">{</span><span style="color:#000;font-weight:bold">{</span>1<span style="color:#000;font-weight:bold">,</span>2<span style="color:#000;font-weight:bold">,</span>3<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000;font-weight:bold">{</span>4<span style="color:#000;font-weight:bold">,</span>5<span style="color:#000;font-weight:bold">,</span>9<span style="color:#000;font-weight:bold">,</span>10<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000;font-weight:bold">{</span>6<span style="color:#000;font-weight:bold">,</span>7<span style="color:#000;font-weight:bold">,</span>8<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> arr5<span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#000;font-weight:bold">{</span>1<span style="color:#000;font-weight:bold">,</span>2<span style="color:#000;font-weight:bold">,</span>3<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000;font-weight:bold">{</span>4<span style="color:#000;font-weight:bold">,</span>5<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000;font-weight:bold">{</span>6<span style="color:#000;font-weight:bold">,</span>7<span style="color:#000;font-weight:bold">,</span>8<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#6272a4">// 其他正确的方式
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr4<span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">{</span><span style="color:#ff79c6">{</span>1<span style="color:#ff79c6">,</span>2<span style="color:#ff79c6">,</span>3<span style="color:#ff79c6">}</span><span style="color:#ff79c6">,</span><span style="color:#ff79c6">{</span>4<span style="color:#ff79c6">,</span>5<span style="color:#ff79c6">,</span>9<span style="color:#ff79c6">,</span>10<span style="color:#ff79c6">}</span><span style="color:#ff79c6">,</span><span style="color:#ff79c6">{</span>6<span style="color:#ff79c6">,</span>7<span style="color:#ff79c6">,</span>8<span style="color:#ff79c6">}</span><span style="color:#ff79c6">}</span><span style="color:#ff79c6">;</span>
+<span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr5<span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">{</span><span style="color:#ff79c6">{</span>1<span style="color:#ff79c6">,</span>2<span style="color:#ff79c6">,</span>3<span style="color:#ff79c6">}</span><span style="color:#ff79c6">,</span><span style="color:#ff79c6">{</span>4<span style="color:#ff79c6">,</span>5<span style="color:#ff79c6">}</span><span style="color:#ff79c6">,</span><span style="color:#ff79c6">{</span>6<span style="color:#ff79c6">,</span>7<span style="color:#ff79c6">,</span>8<span style="color:#ff79c6">}</span><span style="color:#ff79c6">}</span><span style="color:#ff79c6">;</span>
 
-<span style="color:#998;font-style:italic">// 错误的方式
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// String[][] arr4 = new String[][4];
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// String[4][3] arr5 = new String[][];
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// int[][] arr6 = new int[4][3]{{1,2,3},{4,5},{6,7,8}};
+<span style="color:#6272a4">// 错误的方式
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// String[][] arr4 = new String[][4];
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// String[4][3] arr5 = new String[][];
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// int[][] arr6 = new int[4][3]{{1,2,3},{4,5},{6,7,8}};
 </span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>长度
 第一维和第二维的长度可以不相同</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>arr1<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">length</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 3
-</span><span style="color:#998;font-style:italic"></span>System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>arr1<span style="color:#000;font-weight:bold">[</span>0<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">length</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 3
-</span><span style="color:#998;font-style:italic"></span>System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>arr1<span style="color:#000;font-weight:bold">[</span>1<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">length</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 2
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>arr1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 3
+</span><span style="color:#6272a4"></span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>arr1<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">]</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 3
+</span><span style="color:#6272a4"></span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>arr1<span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">]</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 2
 </span></code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>索引</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>arr1<span style="color:#000;font-weight:bold">[</span>0<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span>1<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 2
-</span><span style="color:#998;font-style:italic"></span>System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>arr2<span style="color:#000;font-weight:bold">[</span>1<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span>1<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// null
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>arr1<span style="color:#ff79c6">[</span>0<span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">]</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 2
+</span><span style="color:#6272a4"></span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>arr2<span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span>1<span style="color:#ff79c6">]</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// null
 </span></code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>元素的默认初始化
 二维数组第一维的元素为外层元素，第二维的元素为内层元素</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -410,15 +410,15 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> arr1 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span>3<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span>4<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#998;font-style:italic">// 对于上面这种初始化方式
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// 外层元素初始化为地址值，因为第二维已经开辟了空间 
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// 内层元素初始化规则与一维数组相同
-</span><span style="color:#998;font-style:italic"></span>
-<span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> arr2 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#458;font-weight:bold">int</span><span style="color:#000;font-weight:bold">[</span>3<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">[</span>4<span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#998;font-style:italic">// 对于上面这种初始化方式
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// 外层元素初始化为地址值，因为第二维已经开辟了空间 
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// 内层元素初始化规则与一维数组相同
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>3<span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span>4<span style="color:#ff79c6">]</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 对于上面这种初始化方式
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// 外层元素初始化为地址值，因为第二维已经开辟了空间 
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// 内层元素初始化规则与一维数组相同
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>3<span style="color:#ff79c6">]</span><span style="color:#ff79c6">[</span>4<span style="color:#ff79c6">]</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 对于上面这种初始化方式
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// 外层元素初始化为地址值，因为第二维已经开辟了空间 
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// 内层元素初始化规则与一维数组相同
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="arrays-工具类">Arrays 工具类</h2>
@@ -554,11 +554,15 @@ length - 要复制的数组元素的数量。</li>
 <ul class="widget-list">
     
     <li>
+        <a href="https://www.yzt2020.life/post/2020-03-16-JavaEnum/" title="Java基础 | 枚举类">Java基础 | 枚举类</a>
+    </li>
+    
+    <li>
         <a href="https://www.yzt2020.life/post/2020-03-15-JavaUsefulClasses/" title="Java基础 | 常用类">Java基础 | 常用类</a>
     </li>
     
     <li>
-        <a href="https://www.yzt2020.life/post/2020-03-10-String/" title="Java基础 | 字符串">Java基础 | 字符串</a>
+        <a href="https://www.yzt2020.life/post/2020-03-10-JavaString/" title="Java基础 | 字符串">Java基础 | 字符串</a>
     </li>
     
     <li>
@@ -594,7 +598,7 @@ length - 要复制的数组元素的数量。</li>
         <h3 class="widget-title">分类</h3>
 <ul class="widget-list">
     
-    <li><a href="https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80/">Java基础 (7)</a></li>
+    <li><a href="https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80/">Java基础 (8)</a></li>
     
     <li><a href="https://www.yzt2020.life/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (1)</a></li>
     

@@ -56,7 +56,7 @@
                         placeholder
                     </a>
                 
-                <p class="description">yzt&#39;s blog | 学生一枚 | 努力学习中 | Java | C&#43;&#43; | Linux | 计算流体力学 | Lattice Boltzmann Method</p>
+                <p class="description">yzt&#39;s blog | 学习，才能变强</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -312,9 +312,9 @@ B 类即父类、基类、超类、superclass</li>
 <li>多态情况下，对象调用子父类同名同参的方法时，实际运行时执行的是子类重写的方法，即虚拟方法调用，但是，如果该对象调用父类中没有的方法，则无法通过编译</li>
 <li>多态可以应用在抽象类和接口上</li>
 </ul>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -324,23 +324,23 @@ B 类即父类、基类、超类、superclass</li>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 一个数据库的例子
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">doData</span><span style="color:#000;font-weight:bold">(</span>Connection conn<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#998;font-style:italic">// 规范步骤操作数据库
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#998;font-style:italic">// conn可以是任何数据库实现的对象,比如MySQL会重写如下的数据操作的标准方法
-</span><span style="color:#998;font-style:italic"></span>    conn<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">method1</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-    conn<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">method2</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-    conn<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">method3</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 一个数据库的例子
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">doData</span><span style="color:#ff79c6">(</span>Connection conn<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#6272a4">// 规范步骤操作数据库
+</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// conn可以是任何数据库实现的对象,比如MySQL会重写如下的数据操作的标准方法
+</span><span style="color:#6272a4"></span>    conn<span style="color:#ff79c6">.</span><span style="color:#50fa7b">method1</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+    conn<span style="color:#ff79c6">.</span><span style="color:#50fa7b">method2</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+    conn<span style="color:#ff79c6">.</span><span style="color:#50fa7b">method3</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>注意</strong> 多态不适用于属性，编译时和运行时都看声明变量所使用的的类型，父类的引用不能调用子类所特有的属性和方法</p>
 <h2 id="向下转型">向下转型</h2>
 <h3 id="为什么使用向下转型">为什么使用向下转型</h3>
 <p>有了对象的多态性以后，内存中实际上是加载了子类特有的属性和方法的，但是由于变量声明为父类类型，导致编译时，只能调用父类中声明的属性和方法。若要调用子类特有的属性和方法，必须使用向下转型。而实现向下转型，就要使用强制类型转换。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -356,19 +356,19 @@ B 类即父类、基类、超类、superclass</li>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">Man</span> <span style="color:#000;font-weight:bold">extends</span> Person <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#998;font-style:italic">//...
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Man</span> <span style="color:#8be9fd;font-style:italic">extends</span> Person <span style="color:#ff79c6">{</span>
+    <span style="color:#6272a4">//...
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">}</span>
 
-<span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">Test</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">testMethod</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        <span style="color:#998;font-style:italic">// 此时p是 Person 类型，但对象是Man的对象，使用p无法调用Man特有的属性和方法
-</span><span style="color:#998;font-style:italic"></span>        Person p <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Man<span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-        <span style="color:#998;font-style:italic">// 强制类型转换，把 Person 类型的p转换成Man类型的m
-</span><span style="color:#998;font-style:italic"></span>        <span style="color:#998;font-style:italic">// 这样就可以使用m去调用Man特有的属性和方法
-</span><span style="color:#998;font-style:italic"></span>        Man m <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span>Man<span style="color:#000;font-weight:bold">)</span>p<span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">testMethod</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#6272a4">// 此时p是 Person 类型，但对象是Man的对象，使用p无法调用Man特有的属性和方法
+</span><span style="color:#6272a4"></span>        Person p <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Man<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+        <span style="color:#6272a4">// 强制类型转换，把 Person 类型的p转换成Man类型的m
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// 这样就可以使用m去调用Man特有的属性和方法
+</span><span style="color:#6272a4"></span>        Man m <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">(</span>Man<span style="color:#ff79c6">)</span>p<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
 </code></pre></td></tr></table>
 </div>
@@ -415,9 +415,9 @@ B 类即父类、基类、超类、superclass</li>
 <li>若类重写了 equals() 方法，比如 String 类、Date 类、File 类、包装类等，则比较对象的<strong>实体内容</strong>是否相同，即比较对象的某个或某些属性的值是否相同</li>
 <li>自定义类可以重写 equals() 方法，实际开发中，IDEA 可以自动生成重写的 equals() 方法</li>
 </ul>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -437,24 +437,24 @@ B 类即父类、基类、超类、superclass</li>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">MyClass</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#458;font-weight:bold">int</span> data<span style="color:#000;font-weight:bold">;</span>
-    String str<span style="color:#000;font-weight:bold">;</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">MyClass</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd">int</span> data<span style="color:#ff79c6">;</span>
+    String str<span style="color:#ff79c6">;</span>
 
-    <span style="color:#3c5d5d;font-weight:bold">@Override</span>
-    <span style="color:#000;font-weight:bold">public</span> <span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">equals</span><span style="color:#000;font-weight:bold">(</span>Object obj<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        <span style="color:#000;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span>obj <span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">null</span><span style="color:#000;font-weight:bold">)</span>
-            <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">false</span><span style="color:#000;font-weight:bold">;</span>
-        <span style="color:#000;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">this</span> <span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">=</span> obj<span style="color:#000;font-weight:bold">)</span>
-            <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">true</span><span style="color:#000;font-weight:bold">;</span>
-        <span style="color:#000;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span>obj <span style="color:#000;font-weight:bold">instanceof</span> MyClass<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-            MyClass anotherObj <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span>MyClass<span style="color:#000;font-weight:bold">)</span>obj<span style="color:#000;font-weight:bold">;</span>
-            <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">this</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">data</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">=</span>anotherObj<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">data</span> <span style="color:#000;font-weight:bold">&amp;</span><span style="color:#000;font-weight:bold">&amp;</span> <span style="color:#000;font-weight:bold">this</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">str</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">equals</span><span style="color:#000;font-weight:bold">(</span>anotherObj<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">str</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-        <span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
-            <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">false</span><span style="color:#000;font-weight:bold">;</span>
-        <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">}</span>
+    @Override
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>Object obj<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>obj <span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span> <span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span> obj<span style="color:#ff79c6">)</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>obj <span style="color:#ff79c6">instanceof</span> MyClass<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            MyClass anotherObj <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">(</span>MyClass<span style="color:#ff79c6">)</span>obj<span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">data</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span>anotherObj<span style="color:#ff79c6">.</span><span style="color:#50fa7b">data</span> <span style="color:#ff79c6">&amp;</span><span style="color:#ff79c6">&amp;</span> <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">str</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>anotherObj<span style="color:#ff79c6">.</span><span style="color:#50fa7b">str</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span><span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="tostring">toString</h3>
@@ -509,9 +509,9 @@ B 类即父类、基类、超类、superclass</li>
 </table>
 <p>其中 Byte、Short、Integer、Long、Float、Double 类有共同的父类 Number</p>
 <h3 id="基本数据类型---包装类">基本数据类型&mdash;&gt;包装类</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -522,21 +522,21 @@ B 类即父类、基类、超类、superclass</li>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 包装类的构造器，手动装箱
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> num1 <span style="color:#000;font-weight:bold">=</span> 10<span style="color:#000;font-weight:bold">;</span>
-Integer num2 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Integer<span style="color:#000;font-weight:bold">(</span>num1<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 包装类的构造器，手动装箱
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">int</span> num1 <span style="color:#ff79c6">=</span> 10<span style="color:#ff79c6">;</span>
+Integer num2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Integer<span style="color:#ff79c6">(</span>num1<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
 
-<span style="color:#998;font-style:italic">// 自动装箱
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> num3 <span style="color:#000;font-weight:bold">=</span> 10<span style="color:#000;font-weight:bold">;</span>
-Integer num4 <span style="color:#000;font-weight:bold">=</span> num3<span style="color:#000;font-weight:bold">;</span>
-<span style="color:#458;font-weight:bold">boolean</span> b1 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">true</span><span style="color:#000;font-weight:bold">;</span>
-Boolean b2 <span style="color:#000;font-weight:bold">=</span> b1<span style="color:#000;font-weight:bold">;</span>
+<span style="color:#6272a4">// 自动装箱
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">int</span> num3 <span style="color:#ff79c6">=</span> 10<span style="color:#ff79c6">;</span>
+Integer num4 <span style="color:#ff79c6">=</span> num3<span style="color:#ff79c6">;</span>
+<span style="color:#8be9fd">boolean</span> b1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+Boolean b2 <span style="color:#ff79c6">=</span> b1<span style="color:#ff79c6">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="包装类---基本数据类型">包装类&mdash;&gt;基本数据类型</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -546,20 +546,20 @@ Boolean b2 <span style="color:#000;font-weight:bold">=</span> b1<span style="col
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 包装类的方法,手动拆箱
-</span><span style="color:#998;font-style:italic"></span>Integer num1 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Integer<span style="color:#000;font-weight:bold">(</span>10<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#458;font-weight:bold">int</span> num2 <span style="color:#000;font-weight:bold">=</span> num1<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">intValue</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-Double num3 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Double<span style="color:#000;font-weight:bold">(</span>3<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">14</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#458;font-weight:bold">double</span> num4 <span style="color:#000;font-weight:bold">=</span> num3<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">doubleValue</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 包装类的方法,手动拆箱
+</span><span style="color:#6272a4"></span>Integer num1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Integer<span style="color:#ff79c6">(</span>10<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#8be9fd">int</span> num2 <span style="color:#ff79c6">=</span> num1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">intValue</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+Double num3 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Double<span style="color:#ff79c6">(</span>3<span style="color:#ff79c6">.</span><span style="color:#50fa7b">14</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#8be9fd">double</span> num4 <span style="color:#ff79c6">=</span> num3<span style="color:#ff79c6">.</span><span style="color:#50fa7b">doubleValue</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
 
-<span style="color:#998;font-style:italic">// 自动拆箱
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> num5 <span style="color:#000;font-weight:bold">=</span> num1<span style="color:#000;font-weight:bold">;</span>
+<span style="color:#6272a4">// 自动拆箱
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">int</span> num5 <span style="color:#ff79c6">=</span> num1<span style="color:#ff79c6">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="基本数据类型---string">基本数据类型&mdash;&gt;String</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -568,19 +568,19 @@ Double num3 <span style="color:#000;font-weight:bold">=</span> <span style="colo
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 连接一个空字符串
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">double</span> num <span style="color:#000;font-weight:bold">=</span> 3<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">14</span><span style="color:#000;font-weight:bold">;</span>
-String str1 <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;&#34;</span><span style="color:#000;font-weight:bold">+</span> num<span style="color:#000;font-weight:bold">;</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 连接一个空字符串
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">double</span> num <span style="color:#ff79c6">=</span> 3<span style="color:#ff79c6">.</span><span style="color:#50fa7b">14</span><span style="color:#ff79c6">;</span>
+String str1 <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">+</span> num<span style="color:#ff79c6">;</span>
 
-<span style="color:#998;font-style:italic">// String 类重载的静态方法 valueOf( int/double/... )
-</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">float</span> f <span style="color:#000;font-weight:bold">=</span> 3<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">14F</span><span style="color:#000;font-weight:bold">;</span>
-String str2 <span style="color:#000;font-weight:bold">=</span> String<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">valueOf</span><span style="color:#000;font-weight:bold">(</span>f<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#6272a4">// String 类重载的静态方法 valueOf( int/double/... )
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd">float</span> f <span style="color:#ff79c6">=</span> 3<span style="color:#ff79c6">.</span><span style="color:#50fa7b">14F</span><span style="color:#ff79c6">;</span>
+String str2 <span style="color:#ff79c6">=</span> String<span style="color:#ff79c6">.</span><span style="color:#50fa7b">valueOf</span><span style="color:#ff79c6">(</span>f<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="string---基本数据类型">String&mdash;&gt;基本数据类型</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -589,19 +589,19 @@ String str2 <span style="color:#000;font-weight:bold">=</span> String<span style
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 对应包装类的静态方法 parseXxx(String)
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// z字符串内容必须是纯粹数值
-</span><span style="color:#998;font-style:italic"></span>String str1 <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;123&#34;</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#458;font-weight:bold">int</span> num <span style="color:#000;font-weight:bold">=</span> Integer<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">parseInt</span><span style="color:#000;font-weight:bold">(</span>str<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#998;font-style:italic">// 不区分大小写
-</span><span style="color:#998;font-style:italic"></span>String str2 <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;TrUe&#34;</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#458;font-weight:bold">boolean</span> b <span style="color:#000;font-weight:bold">=</span> Boolean<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">parseBoolean</span><span style="color:#000;font-weight:bold">(</span>str2<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 对应包装类的静态方法 parseXxx(String)
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// z字符串内容必须是纯粹数值
+</span><span style="color:#6272a4"></span>String str1 <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;123&#34;</span><span style="color:#ff79c6">;</span>
+<span style="color:#8be9fd">int</span> num <span style="color:#ff79c6">=</span> Integer<span style="color:#ff79c6">.</span><span style="color:#50fa7b">parseInt</span><span style="color:#ff79c6">(</span>str<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 不区分大小写
+</span><span style="color:#6272a4"></span>String str2 <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;TrUe&#34;</span><span style="color:#ff79c6">;</span>
+<span style="color:#8be9fd">boolean</span> b <span style="color:#ff79c6">=</span> Boolean<span style="color:#ff79c6">.</span><span style="color:#50fa7b">parseBoolean</span><span style="color:#ff79c6">(</span>str2<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="包装类---string">包装类&mdash;&gt;String</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -609,25 +609,25 @@ String str2 <span style="color:#000;font-weight:bold">=</span> String<span style
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// String 类重载的静态方法 valueOf( Integer/Double/... )
-</span><span style="color:#998;font-style:italic"></span>Double d <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Double<span style="color:#000;font-weight:bold">(</span>5<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">2</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-String str1 <span style="color:#000;font-weight:bold">=</span> String<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">valueOf</span><span style="color:#000;font-weight:bold">(</span>d<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// String 类重载的静态方法 valueOf( Integer/Double/... )
+</span><span style="color:#6272a4"></span>Double d <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Double<span style="color:#ff79c6">(</span>5<span style="color:#ff79c6">.</span><span style="color:#50fa7b">2</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+String str1 <span style="color:#ff79c6">=</span> String<span style="color:#ff79c6">.</span><span style="color:#50fa7b">valueOf</span><span style="color:#ff79c6">(</span>d<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
 
-<span style="color:#998;font-style:italic">// 包装类的 toString 方法
-</span><span style="color:#998;font-style:italic"></span>String str2 <span style="color:#000;font-weight:bold">=</span> d<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">toString</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#6272a4">// 包装类的 toString 方法
+</span><span style="color:#6272a4"></span>String str2 <span style="color:#ff79c6">=</span> d<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toString</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="string---包装类">String&mdash;&gt;包装类</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 包装类的构造器
-</span><span style="color:#998;font-style:italic"></span>Integer num <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Integer<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;123&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#998;font-style:italic">// 字符串必须是纯粹的数值
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 包装类的构造器
+</span><span style="color:#6272a4"></span>Integer num <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Integer<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;123&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 字符串必须是纯粹的数值
 </span></code></pre></td></tr></table>
 </div>
 </div>
@@ -711,11 +711,15 @@ String str1 <span style="color:#000;font-weight:bold">=</span> String<span style
 <ul class="widget-list">
     
     <li>
+        <a href="https://www.yzt2020.life/post/2020-03-16-JavaEnum/" title="Java基础 | 枚举类">Java基础 | 枚举类</a>
+    </li>
+    
+    <li>
         <a href="https://www.yzt2020.life/post/2020-03-15-JavaUsefulClasses/" title="Java基础 | 常用类">Java基础 | 常用类</a>
     </li>
     
     <li>
-        <a href="https://www.yzt2020.life/post/2020-03-10-String/" title="Java基础 | 字符串">Java基础 | 字符串</a>
+        <a href="https://www.yzt2020.life/post/2020-03-10-JavaString/" title="Java基础 | 字符串">Java基础 | 字符串</a>
     </li>
     
     <li>
@@ -751,7 +755,7 @@ String str1 <span style="color:#000;font-weight:bold">=</span> String<span style
         <h3 class="widget-title">分类</h3>
 <ul class="widget-list">
     
-    <li><a href="https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80/">Java基础 (7)</a></li>
+    <li><a href="https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80/">Java基础 (8)</a></li>
     
     <li><a href="https://www.yzt2020.life/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (1)</a></li>
     

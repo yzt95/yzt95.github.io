@@ -56,7 +56,7 @@
                         placeholder
                     </a>
                 
-                <p class="description">yzt&#39;s blog | 学生一枚 | 努力学习中 | Java | C&#43;&#43; | Linux | 计算流体力学 | Lattice Boltzmann Method</p>
+                <p class="description">yzt&#39;s blog | 学习，才能变强</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -258,9 +258,9 @@
 </ul>
 <h3 id="创建类">创建类</h3>
 <p>类的创建就是设计类的成员</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -287,65 +287,65 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 权限修饰符 class 类名
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">People</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#998;font-style:italic">//属性（成员变量） 有什么
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#458;font-weight:bold">double</span> height<span style="color:#000;font-weight:bold">;</span>  <span style="color:#998;font-style:italic">//身高
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#458;font-weight:bold">int</span> age<span style="color:#000;font-weight:bold">;</span>     <span style="color:#998;font-style:italic">//年龄
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#458;font-weight:bold">int</span> sex<span style="color:#000;font-weight:bold">;</span>    <span style="color:#998;font-style:italic">//性别，0为男性，非0为女性
-</span><span style="color:#998;font-style:italic"></span>    String name<span style="color:#000;font-weight:bold">;</span>    <span style="color:#998;font-style:italic">//姓名
-</span><span style="color:#998;font-style:italic"></span>    
-    <span style="color:#998;font-style:italic">//方法 干什么
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">cry</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;我在哭！&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">laugh</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;我在笑！&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">printBaseInfo</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;我的身高是&#34;</span> <span style="color:#000;font-weight:bold">+</span> height <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;cm&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;我的年龄是&#34;</span> <span style="color:#000;font-weight:bold">+</span> age <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;岁&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-        <span style="color:#000;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">this</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">sex</span><span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">=</span>0<span style="color:#000;font-weight:bold">)</span>
-            System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;我是男性！&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-        <span style="color:#000;font-weight:bold">else</span> 
-            System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;我是女性！&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;我的姓名是&#34;</span> <span style="color:#000;font-weight:bold">+</span> name<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">}</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 权限修饰符 class 类名
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">People</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#6272a4">//属性（成员变量） 有什么
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">double</span> height<span style="color:#ff79c6">;</span>  <span style="color:#6272a4">//身高
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> age<span style="color:#ff79c6">;</span>     <span style="color:#6272a4">//年龄
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> sex<span style="color:#ff79c6">;</span>    <span style="color:#6272a4">//性别，0为男性，非0为女性
+</span><span style="color:#6272a4"></span>    String name<span style="color:#ff79c6">;</span>    <span style="color:#6272a4">//姓名
+</span><span style="color:#6272a4"></span>    
+    <span style="color:#6272a4">//方法 干什么
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">cry</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;我在哭！&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">laugh</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;我在笑！&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">printBaseInfo</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;我的身高是&#34;</span> <span style="color:#ff79c6">+</span> height <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;cm&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;我的年龄是&#34;</span> <span style="color:#ff79c6">+</span> age <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;岁&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">sex</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">)</span>
+            System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;我是男性！&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">else</span> 
+            System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;我是女性！&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;我的姓名是&#34;</span> <span style="color:#ff79c6">+</span> name<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="创建对象">创建对象</h3>
 <p>使用 new 关键字可以创建一个新的对象，在创建对象实例时，需要为对象实例设置一个变量名</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">People p <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> People<span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">People p <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> People<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>p 并不是对象实例本身，而是一个堆空间中 People 对象的引用（类似 C 语言的指针），引用指向该对象</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">People p1 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> People<span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 创建了一个新的对象，引用p1指向该对象
-</span><span style="color:#998;font-style:italic"></span>People p2 <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> People<span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 创建了一个新的对象，引用p2指向该对象
-</span><span style="color:#998;font-style:italic"></span>People p3 <span style="color:#000;font-weight:bold">=</span> p1<span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 没有创建新的对象，引用p3与p1指向相同的对象
-</span><span style="color:#998;font-style:italic"></span>System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>p1<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">=</span>p2<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// false
-</span><span style="color:#998;font-style:italic"></span>System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>p1<span style="color:#000;font-weight:bold">=</span><span style="color:#000;font-weight:bold">=</span>p3<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// true（p1与p3所保存的地址值相同）
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">People p1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> People<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 创建了一个新的对象，引用p1指向该对象
+</span><span style="color:#6272a4"></span>People p2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> People<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 创建了一个新的对象，引用p2指向该对象
+</span><span style="color:#6272a4"></span>People p3 <span style="color:#ff79c6">=</span> p1<span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 没有创建新的对象，引用p3与p1指向相同的对象
+</span><span style="color:#6272a4"></span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>p1<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span>p2<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// false
+</span><span style="color:#6272a4"></span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>p1<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span>p3<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// true（p1与p3所保存的地址值相同）
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="使用对象">使用对象</h3>
 <p>使用 <strong>对象.属性</strong> 或 <strong>对象.方法</strong> 调用对象的结构。一个类如果创建了多个对象，则每个对象都会保存一份独立的（非静态的）属性，修改一个对象的属性，不会影响另外一个对象的属性。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -353,12 +353,12 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">p1<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">age</span> <span style="color:#000;font-weight:bold">=</span> 18<span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 设置p1所指向的对象的age属性为18
-</span><span style="color:#998;font-style:italic"></span>p2<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">age</span> <span style="color:#000;font-weight:bold">=</span> 19<span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 设置p2所指向的对象的age属性为19
-</span><span style="color:#998;font-style:italic"></span>p3<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">age</span> <span style="color:#000;font-weight:bold">=</span> 20<span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 设置p3所指向的对象的age属性为20
-</span><span style="color:#998;font-style:italic"></span>p1<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">laugh</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// &#34;我在笑！&#34;
-</span><span style="color:#998;font-style:italic"></span>Syetem<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>p1<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">age</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 20，p3与p1指向相同的对象
-</span><span style="color:#998;font-style:italic"></span>Syetem<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>p1<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">age</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 19
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">p1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">age</span> <span style="color:#ff79c6">=</span> 18<span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 设置p1所指向的对象的age属性为18
+</span><span style="color:#6272a4"></span>p2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">age</span> <span style="color:#ff79c6">=</span> 19<span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 设置p2所指向的对象的age属性为19
+</span><span style="color:#6272a4"></span>p3<span style="color:#ff79c6">.</span><span style="color:#50fa7b">age</span> <span style="color:#ff79c6">=</span> 20<span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 设置p3所指向的对象的age属性为20
+</span><span style="color:#6272a4"></span>p1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">laugh</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// &#34;我在笑！&#34;
+</span><span style="color:#6272a4"></span>Syetem<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>p1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">age</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 20，p3与p1指向相同的对象
+</span><span style="color:#6272a4"></span>Syetem<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>p1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">age</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 19
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="匿名对象">匿名对象</h3>
@@ -368,16 +368,16 @@
 <li>若对象的方法只进行一次调用，则可以使用匿名对象</li>
 <li>匿名对象的生命周期只限于该语句，所以使用匿名对象进行属性的赋值并无意义</li>
 </ul>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">new</span> People<span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">laugh</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// &#34;我在笑！&#34;
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">new</span> People<span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">age</span> <span style="color:#000;font-weight:bold">=</span> 21<span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 无意义
-</span><span style="color:#998;font-style:italic"></span>System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">new</span> Pwople<span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">age</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 0
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">new</span> People<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">laugh</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// &#34;我在笑！&#34;
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">new</span> People<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">age</span> <span style="color:#ff79c6">=</span> 21<span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 无意义
+</span><span style="color:#6272a4"></span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> Pwople<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">age</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 0
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="源文件书写规则">源文件书写规则</h3>
@@ -423,27 +423,27 @@
 </ul>
 <h2 id="类的结构之二方法-method">类的结构之二：方法 method</h2>
 <p>方法用来描述类的功能，方法的声明如下</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">权限修饰符 其他修饰符 返回值类型 <span style="color:#900;font-weight:bold">方法名</span><span style="color:#000;font-weight:bold">(</span>参数列表<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">权限修饰符 其他修饰符 返回值类型 <span style="color:#50fa7b">方法名</span><span style="color:#ff79c6">(</span>参数列表<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     方法体
-<span style="color:#000;font-weight:bold">}</span>
-<span style="color:#998;font-style:italic">// 其他修饰符：static,final,abstract
+<span style="color:#ff79c6">}</span>
+<span style="color:#6272a4">// 其他修饰符：static,final,abstract
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="return-关键字">return 关键字</h3>
 <p>return 关键字用在方法体内，用于结束方法和返回需要的数据，return 语句后不可再声明其他语句</p>
 <h3 id="方法重载-overload">方法重载 overload</h3>
 <p>在同一个类中，允许一个以上的同名方法，只要它们的<strong>参数个数</strong>或<strong>参数类型</strong>不同，与方法的权限修饰符、返回值类型、形参变量名、方法体没有关系。但是，只有返回值不同的方法不构成重载。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -461,22 +461,22 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#998;font-style:italic">// 方法重载
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">getSum</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> i<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> j<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;1&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">// 方法重载
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">getSum</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">,</span><span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;1&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
 	
-<span style="color:#000;font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">getSum</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">double</span> d1<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">double</span> d2<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;2&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">getSum</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">double</span> d1<span style="color:#ff79c6">,</span><span style="color:#8be9fd">double</span> d2<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;2&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#000;font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">getSum</span><span style="color:#000;font-weight:bold">(</span>String s <span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> i<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;3&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">getSum</span><span style="color:#ff79c6">(</span>String s <span style="color:#ff79c6">,</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;3&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#000;font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">getSum</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> i<span style="color:#000;font-weight:bold">,</span>String s<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;4&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">getSum</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">,</span>String s<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;4&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="值传递机制">值传递机制</h3>
@@ -544,9 +544,9 @@
 <li>对每个值属性提供对外的公共方法访问，如创建 get/set（取值和赋值）方法，用于对私有属性的访问</li>
 <li>在 get/set 方法里加入属性的控制语句，例如可以加一个判断语句，对于非法输入给予否定</li>
 </ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -582,40 +582,40 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">People</span> <span style="color:#000;font-weight:bold">{</span>
-<span style="color:#998;font-style:italic">// 属性（成员变量）有什么，前面添加了访问修饰符private
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// 变成了私有属性，必须通过方法调用
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">private</span> <span style="color:#458;font-weight:bold">double</span> height<span style="color:#000;font-weight:bold">;</span>     <span style="color:#998;font-style:italic">//身高
-</span><span style="color:#998;font-style:italic"></span>
-<span style="color:#998;font-style:italic">// 属性已经封装好了，如果用户需要调用属性
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// 必须用get和set方法进行调用
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// get和set方法需要程序员自己定义
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">public</span> <span style="color:#458;font-weight:bold">double</span> <span style="color:#900;font-weight:bold">getHeight</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>    
-    <span style="color:#998;font-style:italic">//get 方法命名是get关键字加属性名（属性名首字母大写）
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#998;font-style:italic">//get 方法一般是为了得到属性值
-</span><span style="color:#998;font-style:italic"></span>        <span style="color:#000;font-weight:bold">return</span> height<span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">People</span> <span style="color:#ff79c6">{</span>
+<span style="color:#6272a4">// 属性（成员变量）有什么，前面添加了访问修饰符private
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// 变成了私有属性，必须通过方法调用
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">double</span> height<span style="color:#ff79c6">;</span>     <span style="color:#6272a4">//身高
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4">// 属性已经封装好了，如果用户需要调用属性
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// 必须用get和set方法进行调用
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// get和set方法需要程序员自己定义
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">double</span> <span style="color:#50fa7b">getHeight</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>    
+    <span style="color:#6272a4">//get 方法命名是get关键字加属性名（属性名首字母大写）
+</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">//get 方法一般是为了得到属性值
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">return</span> height<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
 
-<span style="color:#998;font-style:italic">// 同理设置set方法
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// set 方法命名是set关键字加属性名（首字母大写）
-</span><span style="color:#998;font-style:italic"></span><span style="color:#998;font-style:italic">// set 方法一般是给属性值赋值，所以有一个参数
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">setHeight</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">double</span> newHeight<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        height <span style="color:#000;font-weight:bold">=</span> newHeight<span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#6272a4">// 同理设置set方法
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// set 方法命名是set关键字加属性名（首字母大写）
+</span><span style="color:#6272a4"></span><span style="color:#6272a4">// set 方法一般是给属性值赋值，所以有一个参数
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">setHeight</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">double</span> newHeight<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        height <span style="color:#ff79c6">=</span> newHeight<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">NewObject</span> <span style="color:#000;font-weight:bold">{</span>
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">NewObject</span> <span style="color:#ff79c6">{</span>
 
-    <span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">static</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">main</span><span style="color:#000;font-weight:bold">(</span>String<span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> args<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        People LiLei <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> People<span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#998;font-style:italic">//创建了一个People对象LiLei
-</span><span style="color:#998;font-style:italic"></span>
-        <span style="color:#998;font-style:italic">//利用set方法为属性赋值
-</span><span style="color:#998;font-style:italic"></span>        LiLei<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">setHeight</span><span style="color:#000;font-weight:bold">(</span>170<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">0</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        People LiLei <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> People<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>    <span style="color:#6272a4">//创建了一个People对象LiLei
+</span><span style="color:#6272a4"></span>
+        <span style="color:#6272a4">//利用set方法为属性赋值
+</span><span style="color:#6272a4"></span>        LiLei<span style="color:#ff79c6">.</span><span style="color:#50fa7b">setHeight</span><span style="color:#ff79c6">(</span>170<span style="color:#ff79c6">.</span><span style="color:#50fa7b">0</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
 
-        <span style="color:#998;font-style:italic">//利用get方法取属性值
-</span><span style="color:#998;font-style:italic"></span>        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;LiLei的身高是&#34;</span><span style="color:#000;font-weight:bold">+</span>LiLei<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getHeight</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#6272a4">//利用get方法取属性值
+</span><span style="color:#6272a4"></span>        System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;LiLei的身高是&#34;</span><span style="color:#ff79c6">+</span>LiLei<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getHeight</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="类的结构之三构造器-constructor">类的结构之三：构造器 Constructor</h2>
@@ -629,14 +629,14 @@
 <li>每个类都至少有一个构造器。如果没有显式地为类定义构造器，Java 编译器将会为该类提供一个默认的空参构造器。一旦显式的定义了类的构造器之后，系统就不再提供默认的空参构造器</li>
 <li>定义构造器的格式</li>
 </ul>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">权限修饰符 <span style="color:#900;font-weight:bold">类名</span><span style="color:#000;font-weight:bold">(</span>形参列表<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">{</span><span style="color:#000;font-weight:bold">}</span>
-<span style="color:#998;font-style:italic">// 构造方法的名称必须与类同名，无返回值类型和返回值
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">权限修饰符 <span style="color:#50fa7b">类名</span><span style="color:#ff79c6">(</span>形参列表<span style="color:#ff79c6">)</span><span style="color:#ff79c6">{</span><span style="color:#ff79c6">}</span>
+<span style="color:#6272a4">// 构造方法的名称必须与类同名，无返回值类型和返回值
 </span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -644,9 +644,9 @@
 <li>构造器若用 private 修饰，则不可使用该构造方法创建对象，但在本类的其他构造方法中仍然可以调用</li>
 <li>构造器中使用 this 关键字即可调用其他构造器</li>
 </ul>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -679,37 +679,37 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">People</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#998;font-style:italic">//属性（成员变量）有什么
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#458;font-weight:bold">double</span> height<span style="color:#000;font-weight:bold">;</span>     <span style="color:#998;font-style:italic">//身高
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#458;font-weight:bold">int</span> age<span style="color:#000;font-weight:bold">;</span>           <span style="color:#998;font-style:italic">//年龄
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#458;font-weight:bold">int</span> sex<span style="color:#000;font-weight:bold">;</span>       <span style="color:#998;font-style:italic">//性别，0为男性，非0为女性
-</span><span style="color:#998;font-style:italic"></span>
-    <span style="color:#998;font-style:italic">//无参构造方法
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">public</span> <span style="color:#900;font-weight:bold">People</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">{</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">People</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#6272a4">//属性（成员变量）有什么
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">double</span> height<span style="color:#ff79c6">;</span>     <span style="color:#6272a4">//身高
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> age<span style="color:#ff79c6">;</span>           <span style="color:#6272a4">//年龄
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> sex<span style="color:#ff79c6">;</span>       <span style="color:#6272a4">//性别，0为男性，非0为女性
+</span><span style="color:#6272a4"></span>
+    <span style="color:#6272a4">//无参构造方法
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">People</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">{</span>
 
-    <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#998;font-style:italic">//有一个参数的构造方法
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">public</span> <span style="color:#900;font-weight:bold">People</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> age<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">{</span>
-        <span style="color:#000;font-weight:bold">this</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">age</span> <span style="color:#000;font-weight:bold">=</span> age<span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#998;font-style:italic">//构造方法，初始化了所有属性
-</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">public</span> <span style="color:#900;font-weight:bold">People</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">double</span> height<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">double</span> age<span style="color:#000;font-weight:bold">,</span><span style="color:#458;font-weight:bold">int</span> sex<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">{</span>
-        <span style="color:#000;font-weight:bold">this</span><span style="color:#000;font-weight:bold">(</span>age<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
-        <span style="color:#000;font-weight:bold">this</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">height</span> <span style="color:#000;font-weight:bold">=</span> height<span style="color:#000;font-weight:bold">;</span>
-        <span style="color:#000;font-weight:bold">this</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">sex</span> <span style="color:#000;font-weight:bold">=</span> sex<span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#6272a4">//有一个参数的构造方法
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">People</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> age<span style="color:#ff79c6">)</span><span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">age</span> <span style="color:#ff79c6">=</span> age<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+    <span style="color:#6272a4">//构造方法，初始化了所有属性
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#50fa7b">People</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">double</span> height<span style="color:#ff79c6">,</span><span style="color:#8be9fd">double</span> age<span style="color:#ff79c6">,</span><span style="color:#8be9fd">int</span> sex<span style="color:#ff79c6">)</span><span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">(</span>age<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">height</span> <span style="color:#ff79c6">=</span> height<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">sex</span> <span style="color:#ff79c6">=</span> sex<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 
-<span style="color:#998;font-style:italic">//创建对象，调用自定义的有参构造方法
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">NewObject</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">static</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">main</span><span style="color:#000;font-weight:bold">(</span>String<span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">]</span> args<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        People LiLei <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> People<span style="color:#000;font-weight:bold">(</span>168<span style="color:#000;font-weight:bold">,</span> 21<span style="color:#000;font-weight:bold">,</span> 1<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">//创建一个People对象LiLei，并通过构造器对对象的属性进行初始化
-</span><span style="color:#998;font-style:italic"></span>        <span style="color:#998;font-style:italic">// 修改对象的属性
-</span><span style="color:#998;font-style:italic"></span>        LiLei<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">height</span> <span style="color:#000;font-weight:bold">=</span>170<span style="color:#000;font-weight:bold">;</span>
-        LiLei<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">age</span> <span style="color:#000;font-weight:bold">=</span> 20<span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#6272a4">//创建对象，调用自定义的有参构造方法
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">NewObject</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        People LiLei <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> People<span style="color:#ff79c6">(</span>168<span style="color:#ff79c6">,</span> 21<span style="color:#ff79c6">,</span> 1<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> <span style="color:#6272a4">//创建一个People对象LiLei，并通过构造器对对象的属性进行初始化
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// 修改对象的属性
+</span><span style="color:#6272a4"></span>        LiLei<span style="color:#ff79c6">.</span><span style="color:#50fa7b">height</span> <span style="color:#ff79c6">=</span>170<span style="color:#ff79c6">;</span>
+        LiLei<span style="color:#ff79c6">.</span><span style="color:#50fa7b">age</span> <span style="color:#ff79c6">=</span> 20<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="javabean">JavaBean</h3>
@@ -725,16 +725,16 @@
 <li>可以使用 this 关键字的结构：属性、方法、构造器</li>
 <li>在方法中：使用 t<strong>his.属性</strong> 操作当前对象的属性，<strong>this.方法</strong> 调用当前对象的方法。一般情况下可以省略 this. ，但是当成员变量和局部变量（例如方法的形参）间发生冲突时，必须在属性名前面前室添加 this.</li>
 </ul>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">setHeight</span><span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">double</span> height<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000;font-weight:bold">this</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">height</span> <span style="color:#000;font-weight:bold">=</span> height<span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">setHeight</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">double</span> height<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">height</span> <span style="color:#ff79c6">=</span> height<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -751,24 +751,24 @@
 <li>包名全部小写，见名知意</li>
 <li>包名中每 . 一次就代表一层文件目录</li>
 </ul>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">package</span> <span style="color:#555">包名</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#998;font-style:italic">//注意：必须放在源程序的第一行，包名可用&#34;.&#34;号隔开
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> 包名<span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">//注意：必须放在源程序的第一行，包名可用&#34;.&#34;号隔开
 </span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">package</span> <span style="color:#555">com.yzt95</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#998;font-style:italic">//包中用&#34;.&#34;来分层
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">package</span> com.yzt95<span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">//包中用&#34;.&#34;来分层
 </span></code></pre></td></tr></table>
 </div>
 </div><p><strong>JDK 中常用包</strong></p>
@@ -790,14 +790,14 @@
 <ul>
 <li>使用 import 关键字，显示的导入指定包下的类或接口</li>
 </ul>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">import</span> <span style="color:#555">com.yzt95.People</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 导入com.yzt95包下的Pelple类
-</span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">import</span> <span style="color:#555">com.yzt95.*</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#998;font-style:italic">// 将com.yzt95包下的所有文件都导入进来， * 是通配符
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> com.yzt95.People<span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 导入com.yzt95包下的Pelple类
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">import</span> com.yzt95.*<span style="color:#ff79c6">;</span> <span style="color:#6272a4">// 将com.yzt95包下的所有文件都导入进来， * 是通配符
 </span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -886,11 +886,15 @@
 <ul class="widget-list">
     
     <li>
+        <a href="https://www.yzt2020.life/post/2020-03-16-JavaEnum/" title="Java基础 | 枚举类">Java基础 | 枚举类</a>
+    </li>
+    
+    <li>
         <a href="https://www.yzt2020.life/post/2020-03-15-JavaUsefulClasses/" title="Java基础 | 常用类">Java基础 | 常用类</a>
     </li>
     
     <li>
-        <a href="https://www.yzt2020.life/post/2020-03-10-String/" title="Java基础 | 字符串">Java基础 | 字符串</a>
+        <a href="https://www.yzt2020.life/post/2020-03-10-JavaString/" title="Java基础 | 字符串">Java基础 | 字符串</a>
     </li>
     
     <li>
@@ -926,7 +930,7 @@
         <h3 class="widget-title">分类</h3>
 <ul class="widget-list">
     
-    <li><a href="https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80/">Java基础 (7)</a></li>
+    <li><a href="https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80/">Java基础 (8)</a></li>
     
     <li><a href="https://www.yzt2020.life/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (1)</a></li>
     
