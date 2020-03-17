@@ -6,10 +6,19 @@
     <description>Recent content in Java基础 on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 16 Mar 2020 14:31:03 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2020 20:20:30 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 多线程</title>
+      <link>https://www.yzt2020.life/post/2020-03-17-JavaMyltiThread/</link>
+      <pubDate>Tue, 17 Mar 2020 20:20:30 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-17-JavaMyltiThread/</guid>
+      <description>基本概念 程序 program 程序是为完成特定任务、用某种语言编写的一组指令的集合，是指一段静态的代码 进程 process 进程是程</description>
+    </item>
     
     <item>
       <title>Java基础 | 枚举类</title>
