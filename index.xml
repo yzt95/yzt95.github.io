@@ -6,10 +6,19 @@
     <description>Recent content on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 17 Mar 2020 20:20:30 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 13:29:41 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 集合</title>
+      <link>https://www.yzt2020.life/post/2020-03-19-JavaCollection/</link>
+      <pubDate>Thu, 19 Mar 2020 13:29:41 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-19-JavaCollection/</guid>
+      <description>概述 集合与数组 集合和数组都是对多个数据进行存储操作的结构，即 Java 容器，此时的存储是指内存层面的存储，不</description>
+    </item>
     
     <item>
       <title>Java基础 | 多线程</title>

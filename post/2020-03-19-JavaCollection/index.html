@@ -1,0 +1,1292 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Java基础 | 集合 | placeholder</title>
+    <meta property="og:title" content="Java基础 | 集合 - placeholder">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-03-19T13:29:41&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-03-19T13:29:41&#43;08:00'>
+        
+    <meta name="Keywords" content="学习笔记，总结，日志，博客，Java，C&#43;&#43;，Linux，CFD，LBM">
+    <meta name="description" content="Java基础 | 集合">
+        
+    <meta name="author" content="yzt">
+    <meta property="og:url" content="https://www.yzt2020.life/post/2020-03-19-JavaCollection/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4031353640611810",
+        enable_page_level_ads: true
+    });
+    </script>
+    
+
+
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.yzt2020.life">
+                        placeholder
+                    </a>
+                
+                <p class="description">yzt&#39;s blog | 学习，才能变强</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.yzt2020.life">首页</a>
+                    
+                    <a  href="https://www.yzt2020.life/archives/" title="全部文章">全部文章</a>
+                    
+                    <a  href="https://www.yzt2020.life/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#概述">概述</a>
+      <ul>
+        <li><a href="#集合与数组">集合与数组</a></li>
+        <li><a href="#集合的特点">集合的特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#collection-接口">Collection 接口</a>
+      <ul>
+        <li><a href="#常见方法">常见方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#遍历集合">遍历集合</a>
+      <ul>
+        <li><a href="#iterator-迭代器接口">Iterator 迭代器接口</a></li>
+        <li><a href="#jdk50-新增-foreach-循环">JDK5.0 新增 foreach 循环</a></li>
+      </ul>
+    </li>
+    <li><a href="#collection-子接口list">Collection 子接口：List</a>
+      <ul>
+        <li><a href="#arraylist">ArrayList</a></li>
+        <li><a href="#linkedlist">LinkedList</a></li>
+        <li><a href="#vector">Vector</a></li>
+        <li><a href="#list-接口中常用方法">List 接口中常用方法</a></li>
+        <li><a href="#对比-arraylist-和-linkedlist">对比 ArrayList 和 LinkedList</a></li>
+      </ul>
+    </li>
+    <li><a href="#collection-子接口set">Collection 子接口：Set</a>
+      <ul>
+        <li><a href="#hashset">HashSet</a></li>
+        <li><a href="#linkedhashset">LinkedHashSet</a></li>
+        <li><a href="#treeset">TreeSet</a></li>
+      </ul>
+    </li>
+    <li><a href="#map-接口">Map 接口</a>
+      <ul>
+        <li><a href="#hashmap">HashMap</a></li>
+        <li><a href="#linkedhashmap">LinkedHashMap</a></li>
+        <li><a href="#treemap">TreeMap</a></li>
+        <li><a href="#hashtable">Hashtable</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#常用方法">常用方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#collections-工具类">Collections 工具类</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Java基础 | 集合</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年3月19日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80'>Java基础</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <h2 id="概述">概述</h2>
+<h3 id="集合与数组">集合与数组</h3>
+<ol>
+<li>集合和数组都是对多个数据进行存储操作的结构，即 <strong>Java 容器</strong>，此时的存储是指内存层面的存储，不涉及持久化的存储</li>
+<li>数组一旦初始化，长度就确定了，而且存储的数据类型也确定了，数组提供的操作方法太少，增删插等操作不方便，效率不高，对于无序、不可重复的要求不能满足</li>
+</ol>
+<h3 id="集合的特点">集合的特点</h3>
+<ol>
+<li>用于存储对象的容器，动态存储</li>
+<li>集合的长度是可变的</li>
+<li>集合中不可以存储基本数据类型值</li>
+</ol>
+<p>集合定义在 java.util 包下，可以分为两个体系</p>
+<ul>
+<li>Collection：单列集合，用于存储对象
+<ul>
+<li>List 接口：元素有序、可重复的合
+<ul>
+<li>ArrayList</li>
+<li>LinkedList</li>
+<li>Vector</li>
+</ul>
+</li>
+<li>Set 接口：元素无序、不可重复的集合
+<ul>
+<li>HashSet
+<ul>
+<li>LinkedHashSet</li>
+</ul>
+</li>
+<li>TreeSet</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Map：双列集合，用于存储具有映射关系的 <strong>key-value（键值对）</strong> 的对象
+<ul>
+<li>HashMap
+<ul>
+<li>LinkedHashMap</li>
+</ul>
+</li>
+<li>TreeMap</li>
+<li>Hashtable
+<ul>
+<li>Properties</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="collection-接口">Collection 接口</h2>
+<p>集合容器因为内部的数据结构不同，有多种具体容器，不断向上抽象，就形成了集合框架，框架的顶层是 Collection 接口</p>
+<h3 id="常见方法">常见方法</h3>
+<ol>
+<li>添加</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>Object obj<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 添加元素
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">addAll</span><span style="color:#ff79c6">(</span>Collection coll<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> 
+<span style="color:#6272a4">// 将coll中的元素添加至调用addAll()的集合中
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>删除</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">remove</span><span style="color:#ff79c6">(</span>Object obj<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> 
+<span style="color:#6272a4">// 删除obj元素
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">removeAll</span><span style="color:#ff79c6">(</span>Collection coll<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> 
+<span style="color:#6272a4">// 将两个集合中相同的元素从当前集合中删除
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">retainAll</span><span style="color:#ff79c6">(</span>Collection coll<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> 
+<span style="color:#6272a4">// 取交集：将两个集合中相同的元素从当前集合中保留，删除不同元素
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">clear</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> 
+<span style="color:#6272a4">// 清空集合
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>判断</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">contains</span><span style="color:#ff79c6">(</span>Object obj<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> 
+<span style="color:#6272a4">// 判断集合中是否存在 obj 元素，注意，对于重写了 equals() 方法的类，比如String，底层是使用equals方法去比较 obj 对象的内容，如果没有写，则比较地址也就是 Object 类的对象，所以一般要求向集合中添加的类都要重写 equals() 方法
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">containsAll</span><span style="color:#ff79c6">(</span>Collection coll<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> 
+<span style="color:#6272a4">// 判断集合中是否包含coll中的所有元素
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">isEmpty</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> 
+<span style="color:#6272a4">// 判断集合是否为空
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>Collection coll<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 判断集合元素是否全部相同（不同的Collection实现类可能考虑或不考虑有序）
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>获取</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">size</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> 
+<span style="color:#6272a4">// 返回集合中元素的个数
+</span><span style="color:#6272a4"></span>
+Iterator <span style="color:#50fa7b">iterator</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> 
+<span style="color:#6272a4">// 取出元素的方式：迭代器，返回迭代器对象，因为每个容器的数据结构不同，所以该迭代器对象是在具体容器内部实现的，具体实现方法对于使用容器者不重要
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>其他</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">hashcode</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 返回集合的哈希值
+</span><span style="color:#6272a4"></span>
+Object<span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> <span style="color:#50fa7b">toArray</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span> 
+<span style="color:#6272a4">// 将集合转成数组
+</span></code></pre></td></tr></table>
+</div>
+</div><p>注意：数组转换为集合需要 Arrays 类的静态方法 asList(T t)</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String str<span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> String<span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">{</span><span style="color:#f1fa8c">&#34;hello&#34;</span><span style="color:#ff79c6">,</span><span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">,</span><span style="color:#f1fa8c">&#34;world&#34;</span><span style="color:#ff79c6">}</span>
+List<span style="color:#ff79c6">&lt;</span>String<span style="color:#ff79c6">&gt;</span> list <span style="color:#ff79c6">=</span> Arrays<span style="color:#ff79c6">.</span><span style="color:#50fa7b">asList</span><span style="color:#ff79c6">(</span>str<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>list<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+
+ArrayList list1 <span style="color:#ff79c6">=</span> Arrays<span style="color:#ff79c6">.</span><span style="color:#50fa7b">asList</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> Integer<span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">{</span>123<span style="color:#ff79c6">,</span>456<span style="color:#ff79c6">}</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>list1<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+
+LinkedList list2 <span style="color:#ff79c6">=</span> Arrays<span style="color:#ff79c6">.</span><span style="color:#50fa7b">asList</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">{</span>123<span style="color:#ff79c6">,</span>456<span style="color:#ff79c6">}</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>list2<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="遍历集合">遍历集合</h2>
+<h3 id="iterator-迭代器接口">Iterator 迭代器接口</h3>
+<p>Iterator 接口的对象即<strong>迭代器</strong>，用于遍历 Collection 容器（不用于 Map 遍历）中的元素，而不暴露容器的内部细节,注意集合对象每次调用 iterator() 都会得到一个<strong>全新</strong>的迭代器对象</p>
+<p><strong>方法</strong></p>
+<ul>
+<li>hasNext()
+<ul>
+<li>判断当前指针位置的下一位置是否存在元素</li>
+<li>如果不用此方法控制遍历，可能出现 NoSuchElementException</li>
+</ul>
+</li>
+<li>next()
+<ol>
+<li>指针下移</li>
+<li>返回指针下移之后所指位置上的元素</li>
+</ol>
+</li>
+<li>remove()
+在遍历的时候删除集合中的元素，此方法不同于集合直接调用remove()，如果还未调用 next()方法，或在上次调用 next()方法后已经调用了 remove()方法，再调用 remove() 方法的时候会出现 IllegalStateException</li>
+</ul>
+<p><strong>遍历的正确方方式</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Iterator it <span style="color:#ff79c6">=</span> coll<span style="color:#ff79c6">.</span><span style="color:#50fa7b">iterator</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span>it<span style="color:#ff79c6">.</span><span style="color:#50fa7b">hasNext</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>it<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>错误1</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Iterator it <span style="color:#ff79c6">=</span> coll<span style="color:#ff79c6">.</span><span style="color:#50fa7b">iterator</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 调用 next() 就会让指针后移
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span>it<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">!</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>it<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>错误2</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Iterator it <span style="color:#ff79c6">=</span> coll<span style="color:#ff79c6">.</span><span style="color:#50fa7b">iterator</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 调用集合的 iterator() 就会返回一个全新的迭代器
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span>coll<span style="color:#ff79c6">.</span><span style="color:#50fa7b">iterator</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">hasNext</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>coll<span style="color:#ff79c6">.</span><span style="color:#50fa7b">iterator</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>使用迭代器删除集合中的对象</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Iterator iterator <span style="color:#ff79c6">=</span> coll<span style="color:#ff79c6">.</span><span style="color:#50fa7b">iterator</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span>iterator<span style="color:#ff79c6">.</span><span style="color:#50fa7b">hasNext</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    Object obj <span style="color:#ff79c6">=</span> iterator<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>targetObj<span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>obj<span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        iterator <span style="color:#ff79c6">.</span><span style="color:#50fa7b">remove</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="jdk50-新增-foreach-循环">JDK5.0 新增 foreach 循环</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Collection coll <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> ArrayList<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+coll<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span>123<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+coll<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;hello world&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+coll<span style="color:#ff79c6">.</span><span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">false</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 集合元素的类型 局部变量 : 集合对象
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span>Object obj <span style="color:#ff79c6">:</span> coll<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>obj<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
+
+<span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span> arr <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span><span style="color:#ff79c6">]</span><span style="color:#ff79c6">{</span>1<span style="color:#ff79c6">,</span>2<span style="color:#ff79c6">,</span>3<span style="color:#ff79c6">,</span>4<span style="color:#ff79c6">,</span>5<span style="color:#ff79c6">}</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 数组元素的类型 局部变量 : 数组对象
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">:</span> arr<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    Syetem<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>注：增强 for 循环在底层也是调用迭代器</p>
+<h2 id="collection-子接口list">Collection 子接口：List</h2>
+<p>List 中的元素<strong>有序</strong>、<strong>可重复</strong>，每个元素都有其对应的顺序<strong>索引</strong>，可以根据索引存取，可以用来代替数组</p>
+<p>List 接口的实现类主要是：ArrayList，LinkedList，Vector</p>
+<ul>
+<li>ArrayList 是 List 的主要实现类，线程不安全，效率高，底层使用数组存储数据</li>
+<li>LinkedList 底层使用双向链表，如果频繁插入和删除操作，效率高于 ArrayList</li>
+<li>Vector 作为 List 接口的古老实现类，线程安全，效率低，底层使用数组存储数据</li>
+</ul>
+<h3 id="arraylist">ArrayList</h3>
+<p><strong>jdk7</strong></p>
+<ul>
+<li>使用数组存储数据</li>
+<li>空参构造器 ArrayList()
+初始化一个长度为 10 的 Object 数组</li>
+<li>添加数据 add(E e)
+如果此次添加数据导致底层的 elementData 数组容量不够，则扩容，默认情况下，扩容为 newCapacity = oldCapacity + (oldCapacity &raquo; 1)，即原来容量的 1.5 倍，然后将原数组中的数据复制到新的数组中</li>
+<li>建议使用有参构造器，先指定一个容量，减少扩容次数
+ArrayList list = new ArrayList(int initialCapacity)</li>
+</ul>
+<p><strong>jdk8</strong></p>
+<ul>
+<li>空参构造器
+底层数组初始化为{}，没有创建长度为 10 的数组，相当于懒汉式，延迟了对象创建，节省内存</li>
+<li>add()
+第一次调用 add() 的时候，底层才创建了长度为10的数组，并将数据添加进数组，后续的添加和扩容与jdk7一样</li>
+</ul>
+<h3 id="linkedlist">LinkedList</h3>
+<ul>
+<li>LinkedList 内部将元素封装到 Node 对象中，且声明了 Node 类型的 first 和 last 属性，默认值为 null，分别指向链表头尾</li>
+<li>add() 创建 Node 对象</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Node</span><span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">{</span>
+    E item<span style="color:#ff79c6">;</span>
+    Node<span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> next<span style="color:#ff79c6">;</span>
+    Node<span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> prev<span style="color:#ff79c6">;</span>
+
+    Node<span style="color:#ff79c6">(</span>Node<span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> prev<span style="color:#ff79c6">,</span>E element<span style="color:#ff79c6">,</span>Node<span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> next<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">item</span> <span style="color:#ff79c6">=</span> element<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> next<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">prev</span> <span style="color:#ff79c6">=</span> prev<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="vector">Vector</h3>
+<p>Vector 扩容方式：默认扩容为之前的2倍</p>
+<h3 id="list-接口中常用方法">List 接口中常用方法</h3>
+<p>相比 Collection 中的常用方法，多了关于索引的方法</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">add</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">,</span>Object ele<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 在 index 索引位置插入元素
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">addAll</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">,</span>Collection eles<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 从index索引位置开始将eles中所有元素添加进来
+</span><span style="color:#6272a4"></span>
+Object <span style="color:#50fa7b">get</span> <span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 获取指定 index 索引位置的元素
+</span><span style="color:#6272a4"></span>
+Object <span style="color:#50fa7b">set</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">,</span>Object ele<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 修改指定index位置的元素为ele
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">indexOf</span><span style="color:#ff79c6">(</span>Object obj<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 返回 obj 在集合中首次出现的索引，若不存在，返回 -1
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">lastIndexOf</span><span style="color:#ff79c6">(</span>Object obj<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 返回 obj 在集合中末次出现的索引，若不存在，返回 -1
+</span><span style="color:#6272a4"></span>
+Object <span style="color:#50fa7b">remove</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> Index<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 移除指定 index 位置的元素，并返回该元素，注意 Collection 中的remove(Object obj)是按照对象删除
+</span><span style="color:#6272a4"></span>
+List <span style="color:#50fa7b">subList</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> fromIndex<span style="color:#ff79c6">,</span><span style="color:#8be9fd">int</span> toIndex<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 返回从 fromIndex 到 toIndex 位置的子集，左闭右开
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="对比-arraylist-和-linkedlist">对比 ArrayList 和 LinkedList</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ArrayList</th>
+<th>LinkedList</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>底层实现</td>
+<td>数组</td>
+<td>链表</td>
+</tr>
+<tr>
+<td>获取指定元素</td>
+<td>速度很快</td>
+<td>需要从头开始查找元素</td>
+</tr>
+<tr>
+<td>添加元素到末尾</td>
+<td>速度很快</td>
+<td>速度很快</td>
+</tr>
+<tr>
+<td>在指定位置添加/删除</td>
+<td>需要移动元素</td>
+<td>不需要移动元素</td>
+</tr>
+<tr>
+<td>内存占用</td>
+<td>小</td>
+<td>较大</td>
+</tr>
+</tbody>
+</table>
+<h2 id="collection-子接口set">Collection 子接口：Set</h2>
+<ol>
+<li>无序性
+以 HashSet 为例，底层使用数组加链表实现，但是存储的数据在底层数组中并非按照数组的索引的顺序添加，而是根据<strong>哈希值</strong>确定，遍历的顺序不同于添加元素的顺序，但是每次的遍历顺序是相同的，<strong>不等于随机性</strong></li>
+<li>不可重复性 
+向 Set 中添加的对象不可以重复，即保证添加的元素按照 equals() 判断时，不可返回true</li>
+<li>Set 没有提供额外的方法</li>
+</ol>
+<h3 id="hashset">HashSet</h3>
+<ul>
+<li>作为 Set 接口的主要实现类，线程不安全，可以存储 null 值</li>
+<li>底层实现是数组加链表</li>
+<li><strong>添加元素的过程</strong>
+向 HashSet 中添加元素 A，首先调用元素 <strong>A 所在类</strong>的 hashCode() 方法，计算元素 A 的 hash 值，然后此 hash 值通过某种算法计算出元素在 HashSet 底层数组中的存放位置（索引），判断数组如果此位置上没有其他元素，则添加成功，如果有其他元素 B（或以链表形式存在多个元素），则比较元素 A、B 的 hash 值，若不同，则添加成功，若哈希值相同，再调用 A 所在类的 equals() 方法，equals() 返回 true 则添加失败，若返回false，则添加成功，并以链表形式进行存储</li>
+<li>对于自定义类，如果没有重写 hashcode() 方法，则调用 Object 的 hashcode()，类似于随机数，就算两个对象的内容一样，哈希值也不同，那么放入底层数组的时候位置就大概率不同，所以也不会去调用 equals() 方法比较内容，调用 equals() 只会出现在：重写了 hashcode() 方法且哈希值相同且数组索引相同的情况下。如果 equals() 也返回 true，再使用链表追加</li>
+<li>要求：向set中添加的数据，其所在的类一定要重写 equals() 方法和 hashCode() 方法，且相同的对象一定要具有相等的哈希值，也就是说对象中用于 equals() 比较的 Field 也一定要用于计算哈希值</li>
+<li>注意，如果指定索引位置上已经以链表形式储存元素
+<ul>
+<li>jdk7 中，元素 A 放入数组中，指向原来的元素</li>
+<li>jdk8 中，原来的元素放入数组中，指向 A</li>
+</ul>
+</li>
+</ul>
+<h3 id="linkedhashset">LinkedHashSet</h3>
+<ul>
+<li>作为 HashSet 的子类，遍历其内部数据时，可以按照添加的顺序遍历</li>
+<li>其底层也是使用数组加链表存储数据，但同时也维护了<strong>两个引用</strong>，记录此数据的前后数据元素，对于频繁遍历，能提高效率</li>
+</ul>
+<h3 id="treeset">TreeSet</h3>
+<ul>
+<li>底层使用红黑树，要求存入的数据必须是<strong>同一个类的对象</strong>，对象不可重复</li>
+<li>可以按照添加对象的指定属性进行排序：自然排序（实现 Comparable 接口）或定制排序（实现 Comparator 接口）</li>
+<li>TreeSet 存储的元素必须实现了 Comparable 接口，或者创建 TreeSet 对象时传入一个 Comparator 接口的实现类对象</li>
+</ul>
+<h2 id="map-接口">Map 接口</h2>
+<ul>
+<li>Map 接口存储双列数据，即 key-value（键值对）的数据</li>
+<li>Map 中的 key 是<strong>无序不可重复</strong>的，使用 Set 存储 key，key 所在的类必须重写 equals() 和 hashCode()</li>
+<li>Map 中的 value <strong>无序可重复</strong>，使用 Collection 存储，value 所在的类要重写 equals()方法</li>
+<li>一个 key-value（键值对）构成一个 Entry 对象，Entry 对象是<strong>无序不可重复</strong>的，使用 Set 存储</li>
+</ul>
+<h3 id="hashmap">HashMap</h3>
+<ul>
+<li>HashMap 是 Map 的主要实现类，线程不安全，效率高，可以存储值为 null 的 key 和 value</li>
+<li>底层实现：jdk7及之前使用<strong>数组 + 链表</strong>，jdk8 使用<strong>数组 + 链表 + 红黑树</strong></li>
+</ul>
+<p><strong>jdk7</strong></p>
+<ul>
+<li>
+<p>HashMap map = new HashMap();
+实例化一个 HashMap，底层创建了一个长度为 16 的数组 Entry[] table</p>
+</li>
+<li>
+<p>map.put(k,v);
+首先调用 k 所在类的 hashCode() 方法计算 k 的哈希值，此哈希值再通过某种算法计算得到在 Entry[] 数组中的存放位置（索引）</p>
+<ul>
+<li>如果此位置上的数据为空，则 k-v 添加成功</li>
+<li>如果此位置上的数据不为空，也就是说此位置上存在一个或多个（链表形式）数据，则比较 k 和已存在的数据（一个或多个）的哈希值
+<ul>
+<li>如果 k 的哈希值与已存在的数据的哈希值都不同，则 k-v 添加成功（以链表形式）</li>
+<li>如果 k 的哈希值和已经存在的某个数据的哈希值相同，继续比较
+<ul>
+<li>调用 k 所在类的 equals()方法，如果 equals()返回 false，k-v添加成功</li>
+<li>如果 equals()返回 true：使用 v 替换之前的键值对中的 value（即修改已有的数据）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>在不断地添加过程中，涉及到扩容问题，当超出临界值且要存放的位置非空时，进行扩容，默认扩容方式：扩容位原来的2倍，并将元素复制到新的 Map</p>
+</li>
+</ul>
+<p><strong>jdk8</strong></p>
+<ul>
+<li>new HashMap() 没有创建一个长度为 16 的数组</li>
+<li>底层为 Node[] 数组而不是 Entry[]</li>
+<li>首次调用 put() 方法时才创建长度为 16 的数组</li>
+<li>当数组某个索引位置的元素以链表形式存在的数据个数 &gt;8，且数组长度 &gt;64 时，该索引位置上所有数据改为使用红黑树存储</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Node</span><span style="color:#ff79c6">&lt;</span>K<span style="color:#ff79c6">,</span>V<span style="color:#ff79c6">&gt;</span> <span style="color:#8be9fd;font-style:italic">implements</span> Map<span style="color:#ff79c6">.</span><span style="color:#50fa7b">Entry</span><span style="color:#ff79c6">&lt;</span>K<span style="color:#ff79c6">,</span>V<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">final</span> <span style="color:#8be9fd">int</span> hash<span style="color:#ff79c6">;</span>
+    <span style="color:#8be9fd;font-style:italic">final</span> K key<span style="color:#ff79c6">;</span>
+    V value<span style="color:#ff79c6">;</span>
+    Node<span style="color:#ff79c6">&lt;</span>K<span style="color:#ff79c6">,</span>V<span style="color:#ff79c6">&gt;</span> next<span style="color:#ff79c6">;</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>底层典型属性</strong></p>
+<ul>
+<li>DEFAULT_INITIAL_CAPACITY：HashMap的默认容量，16</li>
+<li>DEFAULT_LOAD_FACTOR：HashMap的默认加载因子，0.75</li>
+<li>threshold：扩容的临界值，= 容量*加载因子：16 * 0.75 =&gt; 12</li>
+<li>TREEIFY_THRESHOLD：Bucket 中链表长度大于该默认值 8，转化为红黑树</li>
+<li>MIN_TREEIFY_CAPACITY：Bucket 中的 Node 被树化时最小的数组容量，64</li>
+</ul>
+<h3 id="linkedhashmap">LinkedHashMap</h3>
+<ul>
+<li>LinkedHashMap 继承于HashMap，其底层使用的结构与 HashMap 相同，</li>
+<li>LinkedHashMap 内部提供了 Entry，替换 HashMap 中的 Node</li>
+<li>底层的 Entry 类加了一对指针指向前后元素，可以按照添加元素的顺序实现遍历，对于频繁的遍历操作，效率高于HashMap</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Entry</span><span style="color:#ff79c6">&lt;</span>K<span style="color:#ff79c6">,</span>V<span style="color:#ff79c6">&gt;</span> <span style="color:#8be9fd;font-style:italic">extends</span> HashMap<span style="color:#ff79c6">.</span><span style="color:#50fa7b">Node</span><span style="color:#ff79c6">&lt;</span>K<span style="color:#ff79c6">,</span>V<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">{</span>
+    Entry<span style="color:#ff79c6">&lt;</span>K<span style="color:#ff79c6">,</span>V<span style="color:#ff79c6">&gt;</span> before<span style="color:#ff79c6">,</span>after<span style="color:#ff79c6">;</span>
+    Entry<span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> hash<span style="color:#ff79c6">,</span>K key<span style="color:#ff79c6">,</span>V value<span style="color:#ff79c6">,</span>Node<span style="color:#ff79c6">&lt;</span>K<span style="color:#ff79c6">,</span>V<span style="color:#ff79c6">&gt;</span> next<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#8be9fd;font-style:italic">super</span><span style="color:#ff79c6">(</span>hash<span style="color:#ff79c6">,</span>key<span style="color:#ff79c6">,</span>value<span style="color:#ff79c6">,</span>next<span style="color:#ff79c6">)</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="treemap">TreeMap</h3>
+<p>TreeMap 底层使用<strong>红黑树</strong>，向 TreeMap 中添加 key-value，要求 key 必须是用同一个类创建的对象，因为要按照 key 进行排序，实现自然排序（Comparable）或定制排序（Comparator）</p>
+<h3 id="hashtable">Hashtable</h3>
+<p>Hashtable 是 Map 的古老实现类，线程安全，效率低，不能存储值为 null 的 key 和 value</p>
+<h3 id="properties">Properties</h3>
+<ul>
+<li>作为 Hashtable 的子类，常用于处理配置文件</li>
+<li>配置文件中的 key 和 value 都是 字符串，所以 Properties 中的 key 和 value 都是 String</li>
+<li>存取数据时，建议使用 setProperty(String key,String value) 方法和 getProperty(String key)</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Properties pros <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Properties<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+<span style="color:#6272a4">// 加载对应的文件流，这里简写，实际应用时，需要捕捉异常和关闭资源
+</span><span style="color:#6272a4"></span>pros<span style="color:#ff79c6">.</span><span style="color:#50fa7b">load</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">new</span> FileInputStream<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;jdbc.properties&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+String user <span style="color:#ff79c6">=</span> pros<span style="color:#ff79c6">.</span><span style="color:#50fa7b">getProperty</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;user&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>user<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="常用方法">常用方法</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Object <span style="color:#50fa7b">put</span><span style="color:#ff79c6">(</span>Object key<span style="color:#ff79c6">,</span>Object value<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 将指定 key-value 添加到（或修改）当前 Map 对象中
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">putAll</span><span style="color:#ff79c6">(</span>Map m<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 将 m 中的所有 key-value 存储到当前 Map 对象中
+</span><span style="color:#6272a4"></span>
+Object <span style="color:#50fa7b">remove</span><span style="color:#ff79c6">(</span>Object key<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 移除指定 key 的key-value 对，并返回 value，如果当前 Map 中没有指定的 key，返回null
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">clear</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 清空当前 Map 对象中的数据，注意不是 map=null 操作，当前 Map 对象依然存在
+</span><span style="color:#6272a4"></span>
+Object <span style="color:#50fa7b">get</span><span style="color:#ff79c6">(</span>Object key<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 获取指定 key 对应的 value
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">containKey</span><span style="color:#ff79c6">(</span>Object key<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 是否包含指定的key
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">containValue</span><span style="color:#ff79c6">(</span>Object value<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 是否包含指定的value
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">size</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 返回当前 Map 对象的 key-value 对的个数
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">isEmpty</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 判断当前 Map 对象是否为空
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>Object obj<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 判断当前 Map 对象和参数对象 obj 是否相同
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4">/* 遍历Map ，先获取 key-value 对应的集合，之后可以用迭代器去遍历*/</span>
+Set <span style="color:#50fa7b">keySet</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 返回所有key构成的Set集合
+</span><span style="color:#6272a4"></span>
+Collection <span style="color:#50fa7b">values</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 返回所有 value 构成的 Collection 集合
+</span><span style="color:#6272a4"></span>
+Set <span style="color:#50fa7b">entrySet</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 返回所有 key-value 对构成的 Set 集合
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="collections-工具类">Collections 工具类</h2>
+<p>Collections 是操作 Collection、Map 的工具类
+<strong>常用方法</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">reverse</span><span style="color:#ff79c6">(</span>List<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">?</span><span style="color:#ff79c6">&gt;</span> list<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 反转 List 中的元素的顺序
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">shuffle</span><span style="color:#ff79c6">(</span>List<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">?</span><span style="color:#ff79c6">&gt;</span> list<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 对List中的元素进行随机排序
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">sort</span><span style="color:#ff79c6">(</span>List<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 根据自然顺序升序排序，List 中的元素必须实现了 Comparable 接口
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">sort</span><span style="color:#ff79c6">(</span>List<span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> list<span style="color:#ff79c6">,</span> Comparator<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">?</span> <span style="color:#8be9fd;font-style:italic">super</span> T<span style="color:#ff79c6">&gt;</span> c<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 根据指定 Comparator 产生的顺序对 List 集合元素进行排序
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">swap</span><span style="color:#ff79c6">(</span>List<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">?</span><span style="color:#ff79c6">&gt;</span> list<span style="color:#ff79c6">,</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">,</span><span style="color:#8be9fd">int</span> j<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 将指定索引位置的两个元素交换
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">void</span> <span style="color:#50fa7b">copy</span><span style="color:#ff79c6">(</span>List dest<span style="color:#ff79c6">,</span>List src<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 将 src 中的内容复制到 dest 中
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">boolean</span> <span style="color:#50fa7b">replaceAll</span><span style="color:#ff79c6">(</span>List list<span style="color:#ff79c6">,</span>Object oldVal<span style="color:#ff79c6">,</span>Object newVal<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 使用新值替换 List 对象的所有旧值
+</span><span style="color:#6272a4"></span>
+Object <span style="color:#50fa7b">max</span><span style="color:#ff79c6">(</span>Collection coll<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 根据自然顺序，返回最大元素，元素必须实现了 Comparable 接口
+</span><span style="color:#6272a4"></span>
+Object <span style="color:#50fa7b">max</span><span style="color:#ff79c6">(</span>Collection coll <span style="color:#ff79c6">,</span>Comparator comp<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 根据指定的比较器引发的顺序，返回给定集合的最大元素
+</span><span style="color:#6272a4"></span>
+Object <span style="color:#50fa7b">min</span><span style="color:#ff79c6">(</span>Collection Coll<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 根据自然顺序，返回最小元素，元素必须实现了 Comparable 接口
+</span><span style="color:#6272a4"></span>
+Object <span style="color:#50fa7b">min</span><span style="color:#ff79c6">(</span>Collection Coll<span style="color:#ff79c6">,</span>Comparator comp<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 根据指定的比较器引发的顺序，返回给定集合的最小元素
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">frequency</span><span style="color:#ff79c6">(</span>Collection<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">?</span><span style="color:#ff79c6">&gt;</span> c<span style="color:#ff79c6">,</span>Object o<span style="color:#ff79c6">)</span>
+<span style="color:#6272a4">// 返回集合中元素 o 出现的次数
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>不可变集合</strong>
+Collections 还提供了一组方法把可变集合封装成不可变集合</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">List<span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">unmodifiableList</span><span style="color:#ff79c6">(</span>List<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">?</span> <span style="color:#8be9fd;font-style:italic">extends</span> T<span style="color:#ff79c6">&gt;</span> list<span style="color:#ff79c6">)</span>
+
+Set<span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">unmodifiableSet</span><span style="color:#ff79c6">(</span>Set<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">?</span> <span style="color:#8be9fd;font-style:italic">extends</span> T<span style="color:#ff79c6">&gt;</span> set<span style="color:#ff79c6">)</span>
+
+Map<span style="color:#ff79c6">&lt;</span>K<span style="color:#ff79c6">,</span> V<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">unmodifiableMap</span><span style="color:#ff79c6">(</span>Map<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">?</span> <span style="color:#8be9fd;font-style:italic">extends</span> K<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">?</span> <span style="color:#8be9fd;font-style:italic">extends</span> V<span style="color:#ff79c6">&gt;</span> map<span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>注意</strong>：继续对原始的可变集合进行增删是可以的，并且，会直接影响到封装后的不可变集合。因此，如果希望把一个可变集合封装成不可变不可变，那么，返回不可变集合后，最好立刻置空可变集合的引用</p>
+<p><strong>线程安全集合</strong>
+ArrayList 和 HashMap 都是线程不安全的，Collections还提供了一组方法，可以把线程不安全的集合变为线程安全的集合</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">List<span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">synchronizedList</span><span style="color:#ff79c6">(</span>List<span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> list<span style="color:#ff79c6">)</span>
+
+Set<span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">synchronizedSet</span><span style="color:#ff79c6">(</span>Set<span style="color:#ff79c6">&lt;</span>T<span style="color:#ff79c6">&gt;</span> set<span style="color:#ff79c6">)</span>
+
+Map<span style="color:#ff79c6">&lt;</span>K<span style="color:#ff79c6">,</span>V<span style="color:#ff79c6">&gt;</span> <span style="color:#50fa7b">synchronizedMap</span><span style="color:#ff79c6">(</span>Map<span style="color:#ff79c6">&lt;</span>K<span style="color:#ff79c6">,</span>V<span style="color:#ff79c6">&gt;</span> map<span style="color:#ff79c6">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>注意</strong>：Java 5 引入了更高效的并发集合类，所以上述这几个同步方法已经没有什么用了</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.yzt2020.life">yzt</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.yzt2020.life/post/2020-03-19-JavaCollection/">https://www.yzt2020.life/post/2020-03-19-JavaCollection/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/2020-03-17-JavaMyltiThread/">Java基础 | 多线程</a></li>
+        
+        <li><a href="/post/2020-03-16-JavaEnum/">Java基础 | 枚举类</a></li>
+        
+        <li><a href="/post/2020-03-15-JavaUsefulClasses/">Java基础 | 常用类</a></li>
+        
+        <li><a href="/post/2020-03-10-JavaString/">Java基础 | 字符串</a></li>
+        
+        <li><a href="/post/2020-03-07-JavaException/">Java基础 | 异常</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='https://www.yzt2020.life/tags/Java%E5%9F%BA%E7%A1%80'>Java基础</a></li>
+                
+                <li><a href='https://www.yzt2020.life/tags/Java'>Java</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "yzt95/commentForMyBlog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.yzt2020.life/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.yzt2020.life">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-19-JavaCollection/" title="Java基础 | 集合">Java基础 | 集合</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-17-JavaMyltiThread/" title="Java基础 | 多线程">Java基础 | 多线程</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-16-JavaEnum/" title="Java基础 | 枚举类">Java基础 | 枚举类</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-15-JavaUsefulClasses/" title="Java基础 | 常用类">Java基础 | 常用类</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-10-JavaString/" title="Java基础 | 字符串">Java基础 | 字符串</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-07-JavaException/" title="Java基础 | 异常">Java基础 | 异常</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-05-JavaObjectOriented3/" title="Java基础 | 面向对象3">Java基础 | 面向对象3</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-02-JavaObjectOriented2/" title="Java基础 | 面向对象2">Java基础 | 面向对象2</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-02-28-JavaObjectOriented1/" title="Java基础 | 面向对象1">Java基础 | 面向对象1</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-02-25-JavaArray/" title="Java基础 | 数组">Java基础 | 数组</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80/">Java基础 (10)</a></li>
+    
+    <li><a href="https://www.yzt2020.life/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://www.yzt2020.life/tags/GitHub/">GitHub</a>
+    
+    <a href="https://www.yzt2020.life/tags/Hugo/">Hugo</a>
+    
+    <a href="https://www.yzt2020.life/tags/Java/">Java</a>
+    
+    <a href="https://www.yzt2020.life/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+    
+    <a href="https://www.yzt2020.life/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://github.com/yzt95" title="我的 GitHub">我的 GitHub</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.yzt2020.life/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://www.yzt2020.life">placeholder By yzt</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+</body>
+
+</html>
