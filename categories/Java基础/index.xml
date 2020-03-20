@@ -6,10 +6,19 @@
     <description>Recent content in Java基础 on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 19 Mar 2020 13:29:41 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 21:38:50 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 泛型</title>
+      <link>https://www.yzt2020.life/post/2020-03-20-JavaGenerics/</link>
+      <pubDate>Fri, 20 Mar 2020 21:38:50 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-20-JavaGenerics/</guid>
+      <description>概念 泛型，就是允许在定义类、接口时通过一个标识表示类中某个属性的类型或者是某个方法的返回值及参数类型</description>
+    </item>
     
     <item>
       <title>Java基础 | 集合</title>
