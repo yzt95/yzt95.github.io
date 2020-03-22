@@ -6,10 +6,19 @@
     <description>Recent content on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 21 Mar 2020 12:22:53 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2020 13:52:10 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 网络编程</title>
+      <link>https://www.yzt2020.life/post/2020-03-22-JavaNetwork/</link>
+      <pubDate>Sun, 22 Mar 2020 13:52:10 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-22-JavaNetwork/</guid>
+      <description>概述 计算机网络：把分布在不同地理趋于的计算机与专门的外部设备用通信线路胡连成一个规模大、功能强的网络</description>
+    </item>
     
     <item>
       <title>Java基础 | IO 流</title>
