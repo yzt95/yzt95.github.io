@@ -6,10 +6,19 @@
     <description>Recent content in Java on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 22 Mar 2020 13:52:10 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 14:24:09 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/tags/Java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 注解</title>
+      <link>https://www.yzt2020.life/post/2020-03-24-JavaAnnotation/</link>
+      <pubDate>Tue, 24 Mar 2020 14:24:09 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-24-JavaAnnotation/</guid>
+      <description>概念 注解（Annotation）其实就是代码里的特殊标记，这些标记可以在编译、类加载、运行时被读取，</description>
+    </item>
     
     <item>
       <title>Java基础 | 网络编程</title>
