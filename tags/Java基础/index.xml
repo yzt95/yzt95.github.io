@@ -6,10 +6,19 @@
     <description>Recent content in Java基础 on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 24 Mar 2020 14:24:09 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2020 13:21:22 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/tags/Java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 反射</title>
+      <link>https://www.yzt2020.life/post/2020-03-25-JavaReflection/</link>
+      <pubDate>Wed, 25 Mar 2020 13:21:22 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-25-JavaReflection/</guid>
+      <description>概述 Reflection（反射）是被视为动态语言的关键，反射机制允许程序在运行时借助于 Reflection API 取得任何类</description>
+    </item>
     
     <item>
       <title>Java基础 | 注解</title>

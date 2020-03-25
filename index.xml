@@ -6,10 +6,19 @@
     <description>Recent content on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 24 Mar 2020 14:24:09 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2020 13:21:22 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java基础 | 反射</title>
+      <link>https://www.yzt2020.life/post/2020-03-25-JavaReflection/</link>
+      <pubDate>Wed, 25 Mar 2020 13:21:22 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-25-JavaReflection/</guid>
+      <description>概述 Reflection（反射）是被视为动态语言的关键，反射机制允许程序在运行时借助于 Reflection API 取得任何类</description>
+    </item>
     
     <item>
       <title>Java基础 | 注解</title>
@@ -18,6 +27,15 @@
       
       <guid>https://www.yzt2020.life/post/2020-03-24-JavaAnnotation/</guid>
       <description>概念 注解（Annotation）其实就是代码里的特殊标记，这些标记可以在编译、类加载、运行时被读取，</description>
+    </item>
+    
+    <item>
+      <title>收集</title>
+      <link>https://www.yzt2020.life/collections/</link>
+      <pubDate>Mon, 23 Mar 2020 23:29:54 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/collections/</guid>
+      <description>说明 这里是收集别人的文章，都是我看过，且觉得对自己帮助较大的 操作系统 计算机网络</description>
     </item>
     
     <item>
