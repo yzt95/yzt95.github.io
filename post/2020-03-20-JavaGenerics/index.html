@@ -220,7 +220,7 @@
 <p>集合容器类在设计阶段/声明阶段不能确定这个容器到底实际存的是什么类型的对象，所以在 JDK5.0 之前只能把元素类型设计为 Object，JDK5.0 之后使用泛型来解决。因为这个时候除了元素的类型不确定，其他的部分是确定的，例如关于这个元素如何保存，如何管理等是确定的，此时把<strong>元素的类型</strong>设计成一个<strong>参数</strong>，这个类型参数叫做泛型。</p>
 <p>Collection<!-- raw HTML omitted -->，List<!-- raw HTML omitted -->，ArrayList<!-- raw HTML omitted -->   这个<!-- raw HTML omitted -->就是类型参数，即泛型。</p>
 <p>如果不使用泛型，使用集合存储的对象可以是任何类型，出现类型安全问题，在使用集合中存储的对象时，需要进行强制转换，可能出现 ClassCastException</p>
-<p><img src="../pic/%E4%B8%8D%E4%BD%BF%E7%94%A8%E6%B3%9B%E5%9E%8B.jpg" alt="不使用泛型"></p>
+<p><img src="/pic/javabase/%E4%B8%8D%E4%BD%BF%E7%94%A8%E6%B3%9B%E5%9E%8B.jpg" alt="不使用泛型"></p>
 <h2 id="泛型在集合中的使用">泛型在集合中的使用</h2>
 <ul>
 <li>集合接口或集合类在 JDK5.0 时都修改为带泛型的结构</li>
@@ -229,7 +229,7 @@
 <li>注意点：泛型的类型必须是类，不能是基本数据类型。需要用到基本数据类型的位置，用包装类替换</li>
 <li>如果实例化时，没指明泛型的类型，默认类型为java.lang.Object</li>
 </ul>
-<p><img src="../pic/%E4%BD%BF%E7%94%A8%E6%B3%9B%E5%9E%8B.jpg" alt="使用泛型"></p>
+<p><img src="/pic/javabase/%E4%BD%BF%E7%94%A8%E6%B3%9B%E5%9E%8B.jpg" alt="使用泛型"></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
