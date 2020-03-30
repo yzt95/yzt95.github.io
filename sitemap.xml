@@ -4,11 +4,46 @@
   
   <url>
     <loc>https://www.yzt2020.life/categories/</loc>
-    <lastmod>2020-03-25T13:21:22+08:00</lastmod>
+    <lastmod>2020-03-30T13:52:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.yzt2020.life/tags/Java/</loc>
+    <lastmod>2020-03-30T13:52:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yzt2020.life/</loc>
+    <lastmod>2020-03-30T13:52:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yzt2020.life/post/</loc>
+    <lastmod>2020-03-30T13:52:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yzt2020.life/tags/</loc>
+    <lastmod>2020-03-30T13:52:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yzt2020.life/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2020-03-30T13:52:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yzt2020.life/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2020-03-30T13:52:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yzt2020.life/post/2020-03-30-DataStructure-Arraylist/</loc>
+    <lastmod>2020-03-30T13:52:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yzt2020.life/tags/Java%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2020-03-25T13:21:22+08:00</lastmod>
   </url>
   
@@ -18,27 +53,7 @@
   </url>
   
   <url>
-    <loc>https://www.yzt2020.life/tags/Java%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2020-03-25T13:21:22+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.yzt2020.life/post/2020-03-25-JavaReflection/</loc>
-    <lastmod>2020-03-25T13:21:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yzt2020.life/</loc>
-    <lastmod>2020-03-25T13:21:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yzt2020.life/post/</loc>
-    <lastmod>2020-03-25T13:21:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yzt2020.life/tags/</loc>
     <lastmod>2020-03-25T13:21:22+08:00</lastmod>
   </url>
   

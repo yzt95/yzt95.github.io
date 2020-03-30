@@ -6,7 +6,7 @@
     <description>Recent content in Tags on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 25 Mar 2020 13:21:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 13:52:49 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>Java</title>
       <link>https://www.yzt2020.life/tags/Java/</link>
-      <pubDate>Wed, 25 Mar 2020 13:21:22 +0800</pubDate>
+      <pubDate>Mon, 30 Mar 2020 13:52:49 +0800</pubDate>
       
       <guid>https://www.yzt2020.life/tags/Java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据结构</title>
+      <link>https://www.yzt2020.life/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Mon, 30 Mar 2020 13:52:49 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
       <description></description>
     </item>
     

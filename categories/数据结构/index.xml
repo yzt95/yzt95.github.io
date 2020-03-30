@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构 on placeholder</title>
+    <link>https://www.yzt2020.life/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <description>Recent content in 数据结构 on placeholder</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 30 Mar 2020 13:52:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.yzt2020.life/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数据结构 | Arraylist 动态数组</title>
+      <link>https://www.yzt2020.life/post/2020-03-30-DataStructure-Arraylist/</link>
+      <pubDate>Mon, 30 Mar 2020 13:52:49 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-03-30-DataStructure-Arraylist/</guid>
+      <description>前言 开了一个新的系列，自己动手撸简化版的 Java 集合，在实践中学习数据结构 参考资料来自小码哥的数据结构和算</description>
+    </item>
+    
+  </channel>
+</rss>
