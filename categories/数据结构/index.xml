@@ -6,10 +6,19 @@
     <description>Recent content in 数据结构 on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 30 Mar 2020 13:52:49 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2020 16:29:35 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>数据结构 | SingleLinkedList 单向链表</title>
+      <link>https://www.yzt2020.life/post/2020-04-02-DataStructure-SingleLinkedList/</link>
+      <pubDate>Thu, 02 Apr 2020 16:29:35 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-04-02-DataStructure-SingleLinkedList/</guid>
+      <description>链表 链表是一种链式存储的线性表, 所有元素的内存地址不一定是连续的 实现 LinkedList 底层的 Node 有数据域和指针域，分别</description>
+    </item>
     
     <item>
       <title>数据结构 | Arraylist 动态数组</title>
