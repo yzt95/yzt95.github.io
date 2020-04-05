@@ -261,7 +261,7 @@
     <span style="color:#6272a4">// 未查询到返回值
 </span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd;font-style:italic">final</span> <span style="color:#8be9fd">int</span> MINUS_ONE <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span>1<span style="color:#ff79c6">;</span>
 
-    <span style="color:#6272a4">// 私有类内部类，存储数据的链表节点
+    <span style="color:#6272a4">// 私有内部类，存储数据的链表节点
 </span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Node</span><span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">{</span>
         <span style="color:#6272a4">// 存储的元素
 </span><span style="color:#6272a4"></span>        E element<span style="color:#ff79c6">;</span>
@@ -295,7 +295,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="3-获取节点">3. 获取节点</h3>
-<p>私有方法，获取指定位置的节点，方便其他方法使用，同时进行了索引越界检查</p>
+<p>私有方法，获取指定位置的节点，方便其他方法调用，同时进行了索引越界检查</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -321,7 +321,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="4-添加插入元素">4. 添加插入元素</h3>
-<p>要分为插到位置为 0 和位置不为 0 两种情况</p>
+<p>要分为插到位置为 0 （没有前驱，调用getNode(index-1)会越界）和位置不为 0 两种情况</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -365,7 +365,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="5-删除元素">5. 删除元素</h3>
-<p>同样分为删除第一个元素和删除其他元素，将要删除的 Node 的前驱节点的 next 修改为 Node 的后继
+<p>同样分为删除第一个元素和删除其他元素，将要删除的 node 的前驱节点的 next 修改为 node 的后继
 <img src="/pic/datastructure/%E9%93%BE%E8%A1%A8%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0.png" alt="删除"></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -381,9 +381,11 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> E <span style="color:#50fa7b">remove</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    checkRange<span style="color:#ff79c6">(</span>index<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
     Node<span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> node <span style="color:#ff79c6">=</span> first<span style="color:#ff79c6">;</span>
     <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>index<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
         first <span style="color:#ff79c6">=</span> first<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
@@ -473,25 +475,21 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> <span style="color:#6272a4">// 返回 target 元素的第一次出现的索引，如果不存在，返回-1
 </span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">indexOf</span><span style="color:#ff79c6">(</span>E target<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     Node<span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> node <span style="color:#ff79c6">=</span> first<span style="color:#ff79c6">;</span>
-    <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>target<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">&lt;</span>size<span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">+</span><span style="color:#ff79c6">+</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">element</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-                <span style="color:#ff79c6">return</span> i<span style="color:#ff79c6">;</span>
-            <span style="color:#ff79c6">}</span>
+    <span style="color:#6272a4">// 看一下 target 是不是 null
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>target<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#6272a4">// 注意循环中不能使用查找元素的方法get(index)，否则复杂度急剧上升
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">&lt;</span>size<span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">+</span><span style="color:#ff79c6">+</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">element</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> i<span style="color:#ff79c6">;</span>
             node <span style="color:#ff79c6">=</span> node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
         <span style="color:#ff79c6">}</span>
     <span style="color:#ff79c6">}</span><span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
         <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">&lt;</span>size<span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">+</span><span style="color:#ff79c6">+</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>target<span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">element</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-                <span style="color:#ff79c6">return</span> i<span style="color:#ff79c6">;</span>
-            <span style="color:#ff79c6">}</span>
+            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>target<span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">element</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> i<span style="color:#ff79c6">;</span>
             node <span style="color:#ff79c6">=</span> node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
         <span style="color:#ff79c6">}</span>
     <span style="color:#ff79c6">}</span>
@@ -566,14 +564,14 @@
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Override
 <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">toString</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-    StringBuilder str <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuilder<span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;size=&#34;</span> <span style="color:#ff79c6">+</span> size <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;, [&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+    StringBuilder str <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> StringBuilder<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+    str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;size=&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span>size<span style="color:#ff79c6">)</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;, [&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
     Node<span style="color:#ff79c6">&lt;</span>E<span style="color:#ff79c6">&gt;</span> node <span style="color:#ff79c6">=</span> first<span style="color:#ff79c6">;</span>
     <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i<span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">&lt;</span>size<span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">+</span><span style="color:#ff79c6">+</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-            str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span>node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">element</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
-        <span style="color:#ff79c6">}</span><span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
-            str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;, &#34;</span><span style="color:#ff79c6">+</span>node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">element</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">!</span><span style="color:#ff79c6">=</span>0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;, &#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
         <span style="color:#ff79c6">}</span>
+        str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span>node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">element</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
         node <span style="color:#ff79c6">=</span> node<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
     <span style="color:#ff79c6">}</span>
     str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">append</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;]&#34;</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
@@ -584,15 +582,21 @@
 </div><h3 id="14-索引检查">14. 索引检查</h3>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">indexOutOfBounds</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
@@ -601,6 +605,12 @@
 
 <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">checkRange</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
     <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>index<span style="color:#ff79c6">&lt;</span>0<span style="color:#ff79c6">|</span><span style="color:#ff79c6">|</span>index<span style="color:#ff79c6">&gt;</span><span style="color:#ff79c6">=</span>size<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        indexOutOfBounds<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+
+<span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">checkRangeForAdd</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> index<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>index<span style="color:#ff79c6">&lt;</span>0 <span style="color:#ff79c6">|</span><span style="color:#ff79c6">|</span> index<span style="color:#ff79c6">&gt;</span>size<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
         indexOutOfBounds<span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
     <span style="color:#ff79c6">}</span>
 <span style="color:#ff79c6">}</span>
