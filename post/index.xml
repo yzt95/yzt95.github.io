@@ -6,10 +6,19 @@
     <description>Recent content in Posts on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 02 Apr 2020 16:29:35 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2020 16:33:04 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>数据结构 | LinkedList 双向链表</title>
+      <link>https://www.yzt2020.life/post/2020-04-06-DataStructure-LinkedList/</link>
+      <pubDate>Mon, 06 Apr 2020 16:33:04 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-04-06-DataStructure-LinkedList/</guid>
+      <description>双向链表 之前的单向链表只能通过 Node 中 next 属性从头遍历链表，完成搜索 双向链表中的 Node 增加 prev 属性，指向该节点上</description>
+    </item>
     
     <item>
       <title>数据结构 | SingleLinkedList 单向链表</title>
