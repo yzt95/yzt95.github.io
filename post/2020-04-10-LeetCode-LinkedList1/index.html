@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LeetCode | 链表 1 | placeholder</title>
+    <meta property="og:title" content="LeetCode | 链表 1 - placeholder">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-04-10T22:10:45&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-04-10T22:10:45&#43;08:00'>
+        
+    <meta name="Keywords" content="学习笔记，总结，日志，博客，Java，C&#43;&#43;，Linux，CFD，LBM">
+    <meta name="description" content="LeetCode | 链表 1">
+        
+    <meta name="author" content="yzt">
+    <meta property="og:url" content="https://www.yzt2020.life/post/2020-04-10-LeetCode-LinkedList1/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4031353640611810",
+        enable_page_level_ads: true
+    });
+    </script>
+    
+
+
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://www.yzt2020.life">
+                        placeholder
+                    </a>
+                
+                <p class="description">yzt&#39;s blog | 学习，才能变强</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://www.yzt2020.life">首页</a>
+                    
+                    <a  href="https://www.yzt2020.life/archives/" title="全部文章">全部文章</a>
+                    
+                    <a  href="https://www.yzt2020.life/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#160-相交链表">160. 相交链表</a></li>
+    <li><a href="#206-反转链表">206. 反转链表</a></li>
+    <li><a href="#21-合并两个有序链表">21. 合并两个有序链表</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">LeetCode | 链表 1</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年4月10日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='https://www.yzt2020.life/categories/LeetCode'>LeetCode</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <h2 id="160-相交链表">160. 相交链表</h2>
+<p><a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/">题目</a></p>
+<p>很久之前做的题了，其是把这道题放在 LeetCode 系列第一的位置是有原因的，当时做这道题，真的想了很久，然后上手写题，虽然也通过了，但是代码特别繁冗，后来看到了大神的题解，我彻底跪了，太震撼了，我知道我很菜，但我不知道我竟然那么菜，没有对比就没有伤害。然后就下定决心，学习别人优秀的解法和代码风格，努力提升自己。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">/**
+</span><span style="color:#6272a4"> * Definition for singly-linked list.
+</span><span style="color:#6272a4"> * public class ListNode {
+</span><span style="color:#6272a4"> *     int val;
+</span><span style="color:#6272a4"> *     ListNode next;
+</span><span style="color:#6272a4"> *     ListNode(int x) {
+</span><span style="color:#6272a4"> *         val = x;
+</span><span style="color:#6272a4"> *         next = null;
+</span><span style="color:#6272a4"> *     }
+</span><span style="color:#6272a4"> * }
+</span><span style="color:#6272a4"> */</span>
+
+<span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> ListNode <span style="color:#50fa7b">getIntersectionNode</span><span style="color:#ff79c6">(</span>ListNode headA<span style="color:#ff79c6">,</span> ListNode headB<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>headA<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">|</span><span style="color:#ff79c6">|</span>headB<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
+        ListNode pa <span style="color:#ff79c6">=</span> headA<span style="color:#ff79c6">,</span> pb <span style="color:#ff79c6">=</span> headB<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span>pa<span style="color:#ff79c6">!</span><span style="color:#ff79c6">=</span>pb<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            pa <span style="color:#ff79c6">=</span> pa<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span> <span style="color:#ff79c6">?</span> headB <span style="color:#ff79c6">:</span> pa<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+            pb <span style="color:#ff79c6">=</span> pb<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span> <span style="color:#ff79c6">?</span> headA <span style="color:#ff79c6">:</span> pb<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> pa<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="206-反转链表">206. 反转链表</h2>
+<p><a href="https://leetcode-cn.com/problems/reverse-linked-list/submissions/">题目</a></p>
+<p>最开始想到的最直接的方法，使用一个栈，按顺序把链表节点压入栈中，再弹出重建链表</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">/**
+</span><span style="color:#6272a4"> * Definition for singly-linked list.
+</span><span style="color:#6272a4"> * public class ListNode {
+</span><span style="color:#6272a4"> *     int val;
+</span><span style="color:#6272a4"> *     ListNode next;
+</span><span style="color:#6272a4"> *     ListNode(int x) { val = x; }
+</span><span style="color:#6272a4"> * }
+</span><span style="color:#6272a4"> */</span>
+<span style="color:#ff79c6">import</span> java.util.Stack<span style="color:#ff79c6">;</span>
+
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> ListNode <span style="color:#50fa7b">reverseList</span><span style="color:#ff79c6">(</span>ListNode head<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>head<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span> <span style="color:#ff79c6">|</span><span style="color:#ff79c6">|</span> head<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> head<span style="color:#ff79c6">;</span>
+        Stack<span style="color:#ff79c6">&lt;</span>ListNode<span style="color:#ff79c6">&gt;</span> stack <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Stack<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">&gt;</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span>head<span style="color:#ff79c6">!</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            stack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">push</span><span style="color:#ff79c6">(</span>head<span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+            head <span style="color:#ff79c6">=</span> head<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        ListNode ans <span style="color:#ff79c6">=</span> stack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">pop</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+        ListNode p <span style="color:#ff79c6">=</span> ans<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">!</span>stack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">isEmpty</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> stack<span style="color:#ff79c6">.</span><span style="color:#50fa7b">pop</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+            p <span style="color:#ff79c6">=</span> p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#6272a4">// 注意边界，next赋值null，否则会变成循环链表
+</span><span style="color:#6272a4"></span>        p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>不过，因为有入栈和出栈的操作，相当于遍历了两次链表，很费时间，而且空间复杂度为 $ O(N) $，其实有更快的方法，可以一次遍历实现</p>
+<p>递归版：递归本质就是利用了方法执行的栈结构，无需使用额外的空间，要注意停止递归的返回条件，如果链表特别长，可能爆栈</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> ListNode <span style="color:#50fa7b">reverseList</span><span style="color:#ff79c6">(</span>ListNode head<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>head<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span> <span style="color:#ff79c6">|</span><span style="color:#ff79c6">|</span> head<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> head<span style="color:#ff79c6">;</span>
+        ListNode oldNext <span style="color:#ff79c6">=</span> head<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+        ListNode newHead <span style="color:#ff79c6">=</span> reverseList<span style="color:#ff79c6">(</span>head<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">)</span><span style="color:#ff79c6">;</span>
+        oldNext<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> head<span style="color:#ff79c6">;</span>
+        <span style="color:#6272a4">// 注意边界，head已经变成尾节点，next赋值null
+</span><span style="color:#6272a4"></span>        head<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">return</span> newHead<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>迭代版：使用两个指针，一个指向新链表的（实际的）头节点，另一个去遍历链表，遍历过程中不断将该节点的next指向头节点，旧链表的head就在遍历过程中成为一个标识遍历进度的指针</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> ListNode <span style="color:#50fa7b">reverseList</span><span style="color:#ff79c6">(</span>ListNode head<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>head<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span> <span style="color:#ff79c6">|</span><span style="color:#ff79c6">|</span> head<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> head<span style="color:#ff79c6">;</span>
+        ListNode newHead <span style="color:#ff79c6">=</span> head<span style="color:#ff79c6">,</span> p <span style="color:#ff79c6">=</span> head<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span>p<span style="color:#ff79c6">!</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            head<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+            p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> newHead<span style="color:#ff79c6">;</span>
+            newHead <span style="color:#ff79c6">=</span> p<span style="color:#ff79c6">;</span>
+            p <span style="color:#ff79c6">=</span> head<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        <span style="color:#ff79c6">return</span> newHead<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="21-合并两个有序链表">21. 合并两个有序链表</h2>
+<p><a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">题目</a></p>
+<p>注意题目要求“新链表是通过拼接给定的两个链表的所有节点组成的”，所以不能新建一个链表，再把 l1 和 l2 的 val 赋给新链表</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#6272a4">/**
+</span><span style="color:#6272a4"> * Definition for singly-linked list.
+</span><span style="color:#6272a4"> * public class ListNode {
+</span><span style="color:#6272a4"> *     int val;
+</span><span style="color:#6272a4"> *     ListNode next;
+</span><span style="color:#6272a4"> *     ListNode(int x) { val = x; }
+</span><span style="color:#6272a4"> * }
+</span><span style="color:#6272a4"> */</span>
+<span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Solution</span> <span style="color:#ff79c6">{</span>
+    <span style="color:#8be9fd;font-style:italic">public</span> ListNode <span style="color:#50fa7b">mergeTwoLists</span><span style="color:#ff79c6">(</span>ListNode l1<span style="color:#ff79c6">,</span> ListNode l2<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>l1<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> l2<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>l2<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> l1<span style="color:#ff79c6">;</span>
+        ListNode ans<span style="color:#ff79c6">,</span>p<span style="color:#ff79c6">,</span>p1<span style="color:#ff79c6">,</span>p2<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>l1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span><span style="color:#ff79c6">&gt;</span>l2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            ans <span style="color:#ff79c6">=</span> l2<span style="color:#ff79c6">;</span>
+            p1 <span style="color:#ff79c6">=</span> l1<span style="color:#ff79c6">;</span>
+            p2 <span style="color:#ff79c6">=</span> l2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span><span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+            ans <span style="color:#ff79c6">=</span> l1<span style="color:#ff79c6">;</span>
+            p1 <span style="color:#ff79c6">=</span> l1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+            p2 <span style="color:#ff79c6">=</span> l2<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        p <span style="color:#ff79c6">=</span> ans<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span>p1<span style="color:#ff79c6">!</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">&amp;</span><span style="color:#ff79c6">&amp;</span>p2<span style="color:#ff79c6">!</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>p1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span><span style="color:#ff79c6">&gt;</span>p2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">val</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+                p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> p2<span style="color:#ff79c6">;</span>
+                p2 <span style="color:#ff79c6">=</span> p2<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span><span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+                p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> p1<span style="color:#ff79c6">;</span>
+                p1 <span style="color:#ff79c6">=</span> p1<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+            <span style="color:#ff79c6">}</span>
+            p <span style="color:#ff79c6">=</span> p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">}</span>
+        p<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span> <span style="color:#ff79c6">=</span> p1<span style="color:#ff79c6">=</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">null</span> <span style="color:#ff79c6">?</span> p2 <span style="color:#ff79c6">:</span> p1<span style="color:#ff79c6">;</span>
+        <span style="color:#ff79c6">return</span> ans<span style="color:#ff79c6">;</span>
+    <span style="color:#ff79c6">}</span>
+<span style="color:#ff79c6">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.yzt2020.life">yzt</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.yzt2020.life/post/2020-04-10-LeetCode-LinkedList1/">https://www.yzt2020.life/post/2020-04-10-LeetCode-LinkedList1/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/2020-04-09-DataStructure-Stack/">数据结构 | Stack 栈</a></li>
+        
+        <li><a href="/post/2020-04-07-DataStructure-CircleLinkedList/">数据结构 | CircleLinkedList 循环链表</a></li>
+        
+        <li><a href="/post/2020-04-06-DataStructure-LinkedList/">数据结构 | LinkedList 双向链表</a></li>
+        
+        <li><a href="/post/2020-04-02-DataStructure-SingleLinkedList/">数据结构 | SingleLinkedList 单向链表</a></li>
+        
+        <li><a href="/post/2020-03-30-DataStructure-Arraylist/">数据结构 | Arraylist 动态数组</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='https://www.yzt2020.life/tags/LeetCode'>LeetCode</a></li>
+                
+                <li><a href='https://www.yzt2020.life/tags/Java'>Java</a></li>
+                
+                <li><a href='https://www.yzt2020.life/tags/%E9%93%BE%E8%A1%A8'>链表</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "yzt95/commentForMyBlog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://www.yzt2020.life/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://www.yzt2020.life">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-04-10-LeetCode-LinkedList1/" title="LeetCode | 链表 1">LeetCode | 链表 1</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-04-09-DataStructure-Stack/" title="数据结构 | Stack 栈">数据结构 | Stack 栈</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-04-07-DataStructure-CircleLinkedList/" title="数据结构 | CircleLinkedList 循环链表">数据结构 | CircleLinkedList 循环链表</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-04-06-DataStructure-LinkedList/" title="数据结构 | LinkedList 双向链表">数据结构 | LinkedList 双向链表</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-04-02-DataStructure-SingleLinkedList/" title="数据结构 | SingleLinkedList 单向链表">数据结构 | SingleLinkedList 单向链表</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-30-DataStructure-Arraylist/" title="数据结构 | Arraylist 动态数组">数据结构 | Arraylist 动态数组</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-25-JavaReflection/" title="Java基础 | 反射">Java基础 | 反射</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-24-JavaAnnotation/" title="Java基础 | 注解">Java基础 | 注解</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-22-JavaNetwork/" title="Java基础 | 网络编程">Java基础 | 网络编程</a>
+    </li>
+    
+    <li>
+        <a href="https://www.yzt2020.life/post/2020-03-21-JavaIO/" title="Java基础 | IO 流">Java基础 | IO 流</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="https://www.yzt2020.life/categories/Java%E5%9F%BA%E7%A1%80/">Java基础 (15)</a></li>
+    
+    <li><a href="https://www.yzt2020.life/categories/LeetCode/">LeetCode (1)</a></li>
+    
+    <li><a href="https://www.yzt2020.life/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建 (1)</a></li>
+    
+    <li><a href="https://www.yzt2020.life/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构 (5)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://www.yzt2020.life/tags/GitHub/">GitHub</a>
+    
+    <a href="https://www.yzt2020.life/tags/Hugo/">Hugo</a>
+    
+    <a href="https://www.yzt2020.life/tags/Java/">Java</a>
+    
+    <a href="https://www.yzt2020.life/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+    
+    <a href="https://www.yzt2020.life/tags/LeetCode/">LeetCode</a>
+    
+    <a href="https://www.yzt2020.life/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+    
+    <a href="https://www.yzt2020.life/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+    
+    <a href="https://www.yzt2020.life/tags/%E9%93%BE%E8%A1%A8/">链表</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://github.com/yzt95" title="我在 GitHub">我在 GitHub</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://www.yzt2020.life/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://www.yzt2020.life">placeholder By yzt</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+</body>
+
+</html>
