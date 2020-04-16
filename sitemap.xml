@@ -4,26 +4,46 @@
   
   <url>
     <loc>https://www.yzt2020.life/categories/</loc>
-    <lastmod>2020-04-15T19:58:00+08:00</lastmod>
+    <lastmod>2020-04-16T23:24:32+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.yzt2020.life/tags/MySQL/</loc>
-    <lastmod>2020-04-15T19:58:00+08:00</lastmod>
+    <loc>https://www.yzt2020.life/tags/Java/</loc>
+    <lastmod>2020-04-16T23:24:32+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.yzt2020.life/</loc>
-    <lastmod>2020-04-15T19:58:00+08:00</lastmod>
+    <lastmod>2020-04-16T23:24:32+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.yzt2020.life/post/</loc>
-    <lastmod>2020-04-15T19:58:00+08:00</lastmod>
+    <lastmod>2020-04-16T23:24:32+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.yzt2020.life/tags/</loc>
+    <lastmod>2020-04-16T23:24:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yzt2020.life/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2020-04-16T23:24:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yzt2020.life/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2020-04-16T23:24:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yzt2020.life/post/2020-04-16-DataStructure-Queue/</loc>
+    <lastmod>2020-04-16T23:24:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yzt2020.life/tags/MySQL/</loc>
     <lastmod>2020-04-15T19:58:00+08:00</lastmod>
   </url>
   
@@ -48,17 +68,12 @@
   </url>
   
   <url>
-    <loc>https://www.yzt2020.life/tags/Java/</loc>
+    <loc>https://www.yzt2020.life/categories/LeetCode/</loc>
     <lastmod>2020-04-10T22:10:45+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.yzt2020.life/tags/LeetCode/</loc>
-    <lastmod>2020-04-10T22:10:45+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yzt2020.life/categories/LeetCode/</loc>
     <lastmod>2020-04-10T22:10:45+08:00</lastmod>
   </url>
   
@@ -70,16 +85,6 @@
   <url>
     <loc>https://www.yzt2020.life/tags/%E9%93%BE%E8%A1%A8/</loc>
     <lastmod>2020-04-10T22:10:45+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yzt2020.life/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2020-04-09T12:05:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yzt2020.life/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2020-04-09T12:05:48+08:00</lastmod>
   </url>
   
   <url>
@@ -213,12 +218,12 @@
   </url>
   
   <url>
-    <loc>https://www.yzt2020.life/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://www.yzt2020.life/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2020-02-07T02:16:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.yzt2020.life/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://www.yzt2020.life/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2020-02-07T02:16:23+08:00</lastmod>
   </url>
   

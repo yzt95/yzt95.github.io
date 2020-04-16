@@ -6,10 +6,19 @@
     <description>Recent content in Java on placeholder</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 Apr 2020 22:10:45 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2020 23:24:32 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yzt2020.life/tags/Java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>数据结构 | Queue 队列</title>
+      <link>https://www.yzt2020.life/post/2020-04-16-DataStructure-Queue/</link>
+      <pubDate>Thu, 16 Apr 2020 23:24:32 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-04-16-DataStructure-Queue/</guid>
+      <description>队列 Queue 队列是一种特殊的线性表，只能在头尾两端操作 队尾（rear）: 只能从队尾添加元素，即 enQueu</description>
+    </item>
     
     <item>
       <title>LeetCode | 链表 1</title>
