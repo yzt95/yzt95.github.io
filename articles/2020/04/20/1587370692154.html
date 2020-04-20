@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>Java 基础 | 数组 - yzt 的个人博客</title><meta name="description" content="这里是 yzt 的个人博客"/><meta property="og:description" content="这里是 yzt 的个人博客"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://yzt95.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://yzt95.github.io"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-32.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-32.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-32.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="Java 基础 | 数组 - yzt 的个人博客"/><meta property="og:site_name" content="yzt 的个人博客"/><meta property="og:url"      content="https://yzt95.github.io/articles/2020/04/20/1587370692154.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-32.png"/><link rel="search" type="application/opensearchdescription+xml" title="Java 基础 | 数组 - yzt 的个人博客" href="/opensearch.xml"><link href="https://yzt95.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://yzt95.github.io/manifest.json">        <link rel="canonical" href="https://yzt95.github.io/articles/2020/04/20/1587370692154.html">        <link rel="stylesheet" href="https://yzt95.github.io/skins/nexmoe/css/base.css?1587372032932"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+        <link rel="stylesheet" href="https://yzt95.github.io/skins/nexmoe/css/font-icon.css?1587372032932">
+    </head>
+<body class="mdui-drawer-body-left mdui-loaded">
+<div id="nexmoe-background">
+    <canvas id="c_n1" class="nexmoe-bg"></canvas>
+<div class="mdui-appbar mdui-shadow-0">
+    <div class="mdui-toolbar">
+        <a href="#" mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon">
+            <i class="mdui-icon  iconfont solo-list"></i>
+        </a>
+        <div class="mdui-toolbar-spacer"></div>
+        <a href="/" title="yzt 的个人博客" class="mdui-btn mdui-btn-icon">
+            <img src="https://static.b3log.org/images/brand/solo-32.png" title="yzt 的个人博客" alt="yzt 的个人博客"></a>
+        </a>
+    </div>
+</div>
+</div>
+<div id="nexmoe-header">
+<div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="https://yzt95.github.io/" title="yzt 的个人博客">
+            <img src="https://static.b3log.org/images/brand/solo-32.png" title="yzt 的个人博客" alt=""></a>
+    </div>
+    <div class="nexmoe-count">
+        <div>
+            <span>文章</span>
+            6
+        </div>
+        <div>
+            <span class="ft-gray">浏览</span>
+            <b class="notb" data-uvstaturl="https://yzt95.github.io">0</b>
+        </div>
+    </div>
+    <div class="list-content">
+        <ul class="nexmoe-list mdui-list header__nav" mdui-collapse="{accordion: true}">
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="https://yzt95.github.io/" title="yzt 的个人博客">
+                <i class="mdui-list-item-icon iconfont solo-home"></i>
+                <div class="mdui-list-item-content">回到首页</div>
+            </a>
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="https://yzt95.github.io/links.html"
+               title="友情链接 - yzt 的个人博客">
+                <i class="mdui-list-item-icon iconfont solo-list"></i>
+                <div class="mdui-list-item-content">友情链接</div>
+            </a>
+            <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="https://yzt95.github.io/tags.html"
+               title="标签 - yzt 的个人博客">
+                <i class="mdui-list-item-icon iconfont solo-tags"></i>
+                <div class="mdui-list-item-content">标签</div>
+            </a>
+        </ul>
+    </div>
+    <aside id="nexmoe-sidebar">
+
+        <div class="nexmoe-widget-wrap">
+            <h3 class="nexmoe-widget-title">功能按钮</h3>
+            <div class="nexmoe-widget nexmoe-social features">
+                <a href="https://yzt95.github.io/search" title="搜索">
+                    <i class="mdui-list-item-icon iconfont solo-search"></i>
+                    <div class="mdui-list-item-content">搜索</div>
+                </a>
+                <a href="https://yzt95.github.io/rss.xml" title="RSS">
+                    <i class="mdui-list-item-icon iconfont solo-rss"></i>
+                </a>
+                    <a href="https://yzt95.github.io/start" title="开始使用">
+                        <i class="mdui-list-item-icon iconfont solo-login"></i>
+                        <div class="mdui-list-item-content"> 开始使用</div>
+                    </a>
+            </div>
+        </div>
+
+        <div class="nexmoe-widget-wrap">
+            <h3 class="nexmoe-widget-title">社交按钮</h3>
+            <div class="nexmoe-widget nexmoe-social">
+    <a href="https://hacpai.com/member/yzt"
+       title="https://hacpai.com/member/yzt"
+       class="user__site"
+       target="_blank" rel="noopener nofollow">
+        <svg viewBox="0 0 32 32" width="100%" height="100%">
+            <path fill="#d23f31" style="fill: var(--color1, #d23f31)" d="M5.787 17.226h17.033l5.954 9.528c0.47 0.752 0.003 1.361-1.042 1.361h-15.141z"></path>
+            <path d="M10.74 3.927h17.033c1.045 0 1.512 0.609 1.042 1.361l-5.954 9.528h-19.872l6.379-10.209c0.235-0.376 0.849-0.681 1.372-0.681z"></path>
+            <path d="M2.953 17.226h2.839l6.804 10.889h-1.892c-0.523 0-1.137-0.305-1.372-0.681z"></path>
+        </svg>
+    </a>
+
+
+            </div>
+        </div>
+
+            <div class="nexmoe-widget-wrap">
+                <h3 class="nexmoe-widget-title">标签</h3>
+                <div class="nexmoe-widget tagcloud">
+                        <a rel="tag"
+                           href="https://yzt95.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"
+                           title="标签:数据结构 - yzt 的个人博客"
+                           class="mdui-ripple">
+                            数据结构</a>
+                        <a rel="tag"
+                           href="https://yzt95.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"
+                           title="标签:博客搭建 - yzt 的个人博客"
+                           class="mdui-ripple">
+                            博客搭建</a>
+                        <a rel="tag"
+                           href="https://yzt95.github.io/tags/Java%E5%9F%BA%E7%A1%80"
+                           title="标签:Java基础 - yzt 的个人博客"
+                           class="mdui-ripple">
+                            Java基础</a>
+                        <a rel="tag"
+                           href="https://yzt95.github.io/tags/Hugo"
+                           title="标签:Hugo - yzt 的个人博客"
+                           class="mdui-ripple">
+                            Hugo</a>
+                        <a rel="tag"
+                           href="https://yzt95.github.io/tags/Solo"
+                           title="标签:Solo - yzt 的个人博客"
+                           class="mdui-ripple">
+                            Solo</a>
+                        <a rel="tag"
+                           href="https://yzt95.github.io/tags/Java"
+                           title="标签:Java - yzt 的个人博客"
+                           class="mdui-ripple">
+                            Java</a>
+                        <a rel="tag"
+                           href="https://yzt95.github.io/tags/%E5%BE%85%E5%88%86%E7%B1%BB"
+                           title="标签:待分类 - yzt 的个人博客"
+                           class="mdui-ripple">
+                            待分类</a>
+                </div>
+            </div>
+
+
+            <div class="nexmoe-widget-wrap">
+                <h3 class="nexmoe-widget-title">分类</h3>
+                <div class="nexmoe-widget">
+                    <ul class="category-list">
+                            <li class="category-list-item">
+                                <a class="category-list mdui-ripple"
+                                   href="https://yzt95.github.io/category/Blog"
+                                   title="博客搭建 - yzt 的个人博客">
+                                    博客搭建</a>
+                                <span class="category-list-count">1</span>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="nexmoe-widget-wrap">
+                <h3 class="nexmoe-widget-title">存档</h3>
+                <div class="nexmoe-widget">
+                    <ul class="category-list">
+                                <li class="category-list-item">
+                                    <a href="https://yzt95.github.io/archives/2020/04"
+                                       title="2020 年 04 月 存档 - yzt 的个人博客">
+                                        2020 年 04 月</a>
+                                    <span class="category-list-count">6</span>
+                                </li>
+                    </ul>
+                </div>
+            </div>
+
+    </aside>
+    <div class="nexmoe-copyright">
+        © 2020 <a href="https://yzt95.github.io">yzt 的个人博客</a> <br/>
+         <br>
+        Powered by <a href="https://solo.b3log.org" target="_blank">Solo</a> <br>
+        Theme <a rel="friend" href="https://github.com/InkDP/solo-nexmoe" target="_blank">nexmoe</a>
+        by <a rel="friend" href="https://www.inkdp.cn" target="_blank">InkDP</a>
+    </div>
+</div>
+</div>
+<div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <main id="pjax" class="fn__flex-1">
+            
+            <div class="nexmoe-post">
+                <div class="nexmoe-post-cover">
+                    <img src="https://img.hacpai.com/bing/20180302.jpg?imageView2/1/w/1280/h/720/interlace/1/q/100" alt="Java 基础 | 数组"
+                         data-src="https://img.hacpai.com/bing/20180302.jpg?imageView2/1/w/1280/h/720/interlace/1/q/100" class=" ls-is-cached lazyloaded">
+                    <h1>Java 基础 | 数组</h1>
+                </div>
+                <div class="nexmoe-post-meta">
+                <span>
+                    <i class="nexmoefont iconfont solo-calendarl"></i>2020年04月20日
+                </span>
+
+                    <span>
+                    <i class="nexmoefont iconfont solo-heat"></i>
+                    <b class="notb" data-uvstaturl="https://yzt95.github.io/articles/2020/04/20/1587370692154.html">0</b> °C
+                </span>
+                        <span>
+                    <a class="nexmoefont iconfont solo-tag "
+                       href="https://yzt95.github.io/tags/Java">Java</a>
+                </span>
+                        <span>
+                    <a class="nexmoefont iconfont solo-tag "
+                       href="https://yzt95.github.io/tags/Java%E5%9F%BA%E7%A1%80">Java基础</a>
+                </span>
+
+                </div>
+                <article>
+                    <div class="vditor-reset">
+                        <h2 id="toc_h2_0">数组的特点</h2>
+<ol>
+<li>数组 Array 是多个<strong>相同类型</strong>的数据按一定顺序排列的集合，并使用一个名字命名，通过索引的方式对数组元素统一管理</li>
+<li>数组属于引用数据类型，而数组的元素可以是基本数据类型，也可以是引用数据类型</li>
+<li>创建数组对象会在堆内存中开辟一整块<strong>连续</strong>的空间</li>
+<li>数组的长度 length 一旦确定就不可修改</li>
+<li>数组和其他引用数据类型一样，既可以作为方法的参数，也可以作为方法的返回值</li>
+</ol>
+<h2 id="toc_h2_1">一维数组</h2>
+<ol>
+<li>声明与初始化</li>
+</ol>
+<pre><code class="language-java">// new 的作用就是在堆内存中开辟一块连续的空间，用于存储对象实体
+
+// 方法1,静态初始化：数组初始化和元素赋值同时进行
+int[] arr1 = new int[]{1,2,3,4,5};
+
+// 方法2,动态初始化：数组初始化和元素赋值分开进行
+String[] arr2 = new String[5]; 
+
+// 其他正确的方式
+int[] arr3 = {1,2,3,4,5}; // 省略new int[]
+int[] arr4; // 声明一个int数组，arr是一个尚未初始化的局部变量
+arr4 = new int[5]; // 初始化数组 arr4
+
+// 错误的方式
+// int[] arr1 = new int[]; // 动态初始化不可不指明长度
+// int[5] arr2 = new int[5]; // 左边 int[] 指明arr2是int数组，不可在[]内指明长度
+// int[] arr3 = new int[3]{1,2,3}; // 静态初始化不可指定长度
+</code></pre>
+<ol start="2">
+<li>长度<br>
+数组长度 length 表示数组的大小，即最多能够容纳多少个元素，数组一旦初始化，其长度就不能改变。</li>
+</ol>
+<pre><code class="language-java">System.out.println(arr2.length); // 5
+</code></pre>
+<ol start="3">
+<li>索引<br>
+数组元素的索引从 0 开始，到 length-1 结束</li>
+</ol>
+<pre><code class="language-java">for(int i=0;i&lt;arr.length;i++) {
+    System.out.println(arr[i]);
+}
+</code></pre>
+<ol start="4">
+<li>元素的默认初始化</li>
+</ol>
+<table>
+<thead>
+<tr><th>元素类型</th><th>默认初始化值</th></tr>
+</thead>
+<tbody>
+<tr><td>整型</td><td>0</td></tr>
+<tr><td>浮点型</td><td>0.0</td></tr>
+<tr><td>char</td><td>'\u0000'（不是'0'）</td></tr>
+<tr><td>boolean</td><td>false</td></tr>
+<tr><td>引用数据类型</td><td>null</td></tr>
+</tbody>
+</table>
+<h2 id="toc_h2_2">二维数组</h2>
+<p>如果一个一维数组 A 的元素依然是一维数组，则该数组 A 就是二维数组</p>
+<ol>
+<li>声明与初始化</li>
+</ol>
+<pre><code class="language-java">// 静态初始化
+int[][] arr1 = new int[][]{{1,2,3},{4,5},{6,7,8}};
+
+// 动态初始化1：同时指定第一维和第二维的长度
+String[][] arr2 = new String[3][2];
+
+// 动态初始化2：只指定第一维的长度
+String[][] arr3 = new String[3][];
+
+// 其他正确的方式
+int[] arr4[] = new int[][]{{1,2,3},{4,5,9,10},{6,7,8}};
+int[] arr5[] = {{1,2,3},{4,5},{6,7,8}};
+
+// 错误的方式
+// String[][] arr4 = new String[][4];
+// String[4][3] arr5 = new String[][];
+// int[][] arr6 = new int[4][3]{{1,2,3},{4,5},{6,7,8}};
+</code></pre>
+<ol start="2">
+<li>长度<br>
+第一维和第二维的长度可以不相同</li>
+</ol>
+<pre><code class="language-java">System.out.println(arr1.length); // 3
+System.out.println(arr1[0].length); // 3
+System.out.println(arr1[1].length); // 2
+</code></pre>
+<ol start="3">
+<li>索引</li>
+</ol>
+<pre><code class="language-java">System.out.println(arr1[0][1]); // 2
+System.out.println(arr2[1][1]); // null
+</code></pre>
+<ol start="4">
+<li>元素的默认初始化<br>
+二维数组第一维的元素为外层元素，第二维的元素为内层元素</li>
+</ol>
+<pre><code class="language-java">int[][] arr1 = new int[3][4];
+// 对于上面这种初始化方式
+// 外层元素初始化为地址值，因为第二维已经开辟了空间 
+// 内层元素初始化规则与一维数组相同
+
+int[][] arr2 = new int[3][4];
+// 对于上面这种初始化方式
+// 外层元素初始化为地址值，因为第二维已经开辟了空间 
+// 内层元素初始化规则与一维数组相同
+</code></pre>
+<h2 id="toc_h2_3">Arrays 工具类</h2>
+<p>java.util.Arrays 类提供了很多操作数组的方法。</p>
+<ol>
+<li>
+<p>public static boolean equals(Object[] obj1,Object[] obj2)<br>
+通过数组元素的 equals() 方法比较数组中对应位置的元素是否相等,也就是基于内容比较</p>
+</li>
+<li>
+<p>public static String toString(Object[] obj)<br>
+返回指定数组的内容的字符串表示形式</p>
+</li>
+<li>
+<p>public static void fill(Object[] obj,Object val)<br>
+用指定元素填充指定的数组</p>
+</li>
+<li>
+<p>public static void fill(Object[] obj, int fromIndex, int toIndex, Object val)<br>
+用指定元素填充指定的数组，并指定填充的起止索引（左闭右开）</p>
+</li>
+<li>
+<p>public static void sort(Object[] obj)<br>
+对数组进行升序排序</p>
+</li>
+<li>
+<p>public static int binarySearch(Object[] obj,Object key)<br>
+对数组进行二分查找，如果找到返回元素下标，如果没有找到返回-1</p>
+</li>
+</ol>
+<h2 id="toc_h2_4">其他常用方法</h2>
+<p>java.lang.System 下的 arraycopy 方法</p>
+<ol>
+<li>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</li>
+</ol>
+<ul>
+<li>src - 源数组。<br>
+srcPos - 源数组中的起始位置。<br>
+dest - 目标数组。<br>
+destPos - 目的地数据中的起始位置。<br>
+length - 要复制的数组元素的数量。</li>
+<li>效率比 for 循环高</li>
+<li>浅拷贝：只复制对象的引用，不复制对象本身</li>
+<li>拷贝的数组和原数组的数据类型必须相同</li>
+</ul>
+<h2 id="toc_h2_5">其他</h2>
+<ul>
+<li>数组相对于 ArrayList，效率高，但是灵活度不够</li>
+<li>优先使用容器，在性能成为瓶颈的时候考虑使用数组</li>
+<li>数组常见的异常有
+<ul>
+<li>ArrayIndexOutOfBoundsException 下标越界</li>
+<li>NullPointerException 空指针异常</li>
+</ul>
+</li>
+</ul>
+                    </div>
+                </article>
+                    <div class="nexmoe-post-copyright">
+                        <i class="mdui-list-item-icon iconfont solo-about2"></i>
+                        <hr>
+
+标题：Java 基础 | 数组<br>
+作者：<a href="https://yzt95.github.io" target="_blank">yzt</a><br>
+地址：<a href="https://yzt95.github.io/articles/2020/04/20/1587370692154.html" target="_blank">https://yzt95.github.io/articles/2020/04/20/1587370692154.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                    </div>
+            </div>
+            <div class="post__toc">
+<ul class="article__toc">
+        <li class="toc__h2">
+            <a href="#toc_h2_0">数组的特点</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_1">一维数组</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_2">二维数组</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_3">Arrays 工具类</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_4">其他常用方法</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_5">其他</a>
+        </li>
+</ul>            </div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" style="padding: 30px 0;" data-name="yzt" data-postId="1587370692154"></div>
+
+            
+        </main>
+
+            <div class="nexmoe-hitokoto">
+                <p id="hitokoto">学习。才能变强！生命，在于折腾！</p>
+            </div>
+        <div class="back-to-top iconfont solo-gotop" onclick="Util.goTop()"></div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script type="text/javascript" src="https://yzt95.github.io/js/common.min.js?1587372032932"
+        charset="utf-8"></script>
+    <script type="text/javascript" src="https://yzt95.github.io/skins/nexmoe/js/canvas.js?1587372032932"
+            charset="utf-8"></script>
+
+<script src="https://yzt95.github.io/skins/nexmoe/js/app.js?1587372032932"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+<script type="text/javascript" src="https://yzt95.github.io/js/common.min.js?1587372032932"
+        charset="utf-8"></script>
+<script type="text/javascript" src="https://yzt95.github.io/skins/nexmoe/js/common.js?1587372032932"
+        charset="utf-8"></script>
+<script>
+  var Label = {
+    servePath: "https://yzt95.github.io",
+    staticServePath: "https://yzt95.github.io",
+    luteAvailable: false,
+    hljsStyle: 'autumn',
+    langLabel: "zh_CN",
+    version: "4.0.0",
+    staticSite: true,
+    showCodeBlockLn: true,
+  }
+</script>
+
+<script>
+    console.clear();
+</script>
+<script type="text/javascript">
+    Util.addScript('https://yzt95.github.io/js/page.min.js?1587372032932', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论内容只能为 2 到 500 个字符！",
+        "oId": "1587370692154",
+        "blogHost": "https://yzt95.github.io",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 177ms, 2020/04/20 18:07:39 -->
