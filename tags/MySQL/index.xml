@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL on placeholder</title>
+    <link>https://www.yzt2020.life/tags/MySQL/</link>
+    <description>Recent content in MySQL on placeholder</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 15 Apr 2020 19:58:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.yzt2020.life/tags/MySQL/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数据库 | DQL 语句</title>
+      <link>https://www.yzt2020.life/post/2020-04-15-DataBase-DQL/</link>
+      <pubDate>Wed, 15 Apr 2020 19:58:00 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-04-15-DataBase-DQL/</guid>
+      <description>DQL：Data Query Language，查询表中的记录 基本语法 select 字段列表 from 表名列表 where 条件列表 group by 分组字段</description>
+    </item>
+    
+    <item>
+      <title>数据库 | MySQL 基础</title>
+      <link>https://www.yzt2020.life/post/2020-04-13-DataBase-Basics/</link>
+      <pubDate>Mon, 13 Apr 2020 22:36:36 +0800</pubDate>
+      
+      <guid>https://www.yzt2020.life/post/2020-04-13-DataBase-Basics/</guid>
+      <description>数据库的基本概念 数据库，DataBase，DB，就是用于存储和管理数据的仓库 数据库的特点： 1. 数据库就</description>
+    </item>
+    
+  </channel>
+</rss>
